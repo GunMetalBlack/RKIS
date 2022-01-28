@@ -16,6 +16,7 @@ def DrawScreen(stdscr):
   if(config.gameHasStarted == False):
     engine.mainMenu(stdscr)
   else:
+    stdscr.erase()
     engine.Game(stdscr)
     
 

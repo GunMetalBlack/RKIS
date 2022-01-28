@@ -16,9 +16,10 @@ def PlayerCollisionEntity():
        main.logging.debug(entity.Entity[entity.EntityID[i]]["Name"])
 
 
-def PlayerMovement():
+def PlayerMovement(stdscr):
     speed = 1
-    if(engine.UserInput("d") and config.player_x < 18 ):
+    key = stdscr.getch()
+    if(key == ord('d') and config.player_x < 18 ):
         
         Playery = str(config.map_01[config.player_y])
         temp = list(Playery)
@@ -27,7 +28,7 @@ def PlayerMovement():
         Playerx = "".join(temp)
         del config.map_01[config.player_y]
         config.map_01.insert(config.player_y,Playerx)
-    elif(engine.UserInput("a") and 1 < config.player_x ):
+    elif(key == ord('a') and 1 < config.player_x ):
         
         Playery = str(config.map_01[config.player_y])
         temp = list(Playery)
@@ -36,7 +37,7 @@ def PlayerMovement():
         Playerx = "".join(temp)
         del config.map_01[config.player_y]
         config.map_01.insert(config.player_y,Playerx)
-    elif(engine.UserInput("s") and config.player_y < 11):
+    elif(key == ord('s') and config.player_y < 11):
         
         Playery = str(config.map_01[config.player_y])
         temp = list(Playery)
@@ -45,7 +46,7 @@ def PlayerMovement():
         Playerx = "".join(temp)
         del config.map_01[config.player_y]
         config.map_01.insert(config.player_y + 1,Playerx)
-    elif(engine.UserInput("w") and 1 < config.player_y):
+    elif(key == ord('w') and 1 < config.player_y):
         
         Playery = str(config.map_01[config.player_y])
         temp = list(Playery)
