@@ -96,7 +96,7 @@ imageNames.append("map_wall")
 imageFile.append(".")
 imageNames.append("map_empty")
 
-imageFile.append(Fore.LIGHTYELLOW_EX+"P")
+imageFile.append("P")
 imageNames.append("map_player")
 
 #ITEM DESC imageFil

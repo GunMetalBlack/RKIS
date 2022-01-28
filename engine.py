@@ -1,5 +1,6 @@
 import config
 import imageloader
+import curses
 import containers
 from readchar import readchar
 import main
@@ -15,70 +16,73 @@ def UserInput(keys):
   else:
       keyisPressed = False
   return keyisPressed
+menu = ['Play','About','How its Made']
 
-def mainMenu(): 
-    if(config.Awnser == 1):
-          #Start Main Game Function
-          print(imageloader.images("ui_s1"))
-          if(UserInput("\r")):
-            config.gameHasStarted = True
-    elif(config.Awnser == 2):
-      print(imageloader.images("ui_s2"))
-      if(UserInput("\r")):
-          main.replit.clear()
-          print(Fore.BLUE + "Made By Noah Isaac")
-          print(Fore.LIGHTMAGENTA_EX +"Started Jan 25,2022")
-          input("Press the ENTER key twice to return:")
-    elif(config.Awnser == 3):
-        print(imageloader.images("ui_s3"))
-        if(UserInput("\r")):
-          main.replit.clear()
-          print(Fore.LIGHTGREEN_EX + "LINK TO VIDEO OR WEBSITE")
-          input("Press the ENTER key twice to return:")
+def print_menu(stdscr, selected_row_idx):
+    stdscr.clear()
+    h, w = stdscr.getmaxyx()
+    for idx, row in enumerate(menu):
+        x = w//2 - len(row)//2
+        y = h//2 - len(menu)//2 + idx
+        if idx == selected_row_idx:
+            stdscr.attron(curses.color_pair(1))
+            stdscr.addstr(y, x, row)
+            stdscr.attroff(curses.color_pair(1))
+        else:
+            stdscr.addstr(y, x, row)
+    stdscr.refresh()
+def mainMenu(stdscr):
+    curses.curs_set(0)
+    # color scheme for selected row
+    curses.init_pair(1, curses.COLOR_BLACK, curses.COLOR_WHITE)
+    current_row = 0
+    print_menu(stdscr, current_row)
     if(UserInput("w")):
-      config.Awnser = config.Awnser + 1
-    if(config.Awnser > 3 or config.Awnser < 0):
-      config.Awnser = 1
-  
+        current_row = current_row + 1
+    if(current_row > 3 or current_row < 0):
+        current_row = 1
+    print_menu(stdscr, current_row)
+    
 
 
 
   
-def LoadingGameMap():
+def LoadingGameMap(stdscr):
  for y, line in enumerate(config.map_01):
         for x, c in enumerate(line):
             if c == "0":
-              print(imageloader.images("map_wall"),end = "")
+              stdscr.move(y,x)
+              stdscr.addstr(imageloader.images("map_wall"))
             if c == "1":
-              print(imageloader.images("map_empty"),end = "")
+              stdscr.move(y,x)
+              stdscr.addstr(imageloader.images("map_empty"))
             #The Player is in the array
             if c == "2":
+              stdscr.move(y,x)
               containers.SetPlayerPos(x,y)
-              print(imageloader.images("map_player"),end = "")
+              stdscr.addstr(imageloader.images("map_player"))
             if c == "3":
+              stdscr.move(y,x)
               entity.Entity['chest']['Xpos'] = x
               entity.Entity['chest']['Ypos'] = y
-              print(entity.Entity['chest']['Graphic'],end = "")
-        print()
+              stdscr.addstr(entity.Entity['chest']['Graphic'])
+              
+        stdscr.addstr("")
 
 
 
-def Draw_UI():
-  print(imageloader.images("ui_screenbar"))     
-  WritePos = config.player_x,config.player_y   
-  rows =  [   ["Player Pos",str(WritePos),'',   ''],                   ['HEALTH:', 'b', 'c',    'd']         ,               ["1",   'bbbbbbbbbb', 'c',  'd']]
-  widths = [max(map(len, col)) for col in zip(*rows)]
-  for row in rows:
-      print ("  ".join((val.ljust(width) for val, width in zip(row, widths))))
-  print(entity.Entity[entity.EntityID[0]]['Xpos'],entity.Entity[entity.EntityID[0]]['Xpos'])
+def Draw_UI(stdscr):
+  stdscr.addstr(imageloader.images("ui_screenbar"))     
+  
 
 
 
 
-def Game():
+def Game(stdscr):
     
-    LoadingGameMap()
-    Draw_UI()
+    LoadingGameMap(stdscr)
+    Draw_UI(stdscr)
+    stdscr.refresh()
     containers.PlayerCollisionEntity()
     containers.PlayerMovement()
     

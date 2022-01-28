@@ -1,33 +1,39 @@
 import logging
 import engine 
+import curses
+from curses import wrapper
 import imageloader
 from colorama import init, Fore, Back, Style
 import config
-import replit
 from time import sleep
-replit.clear()
+
 
 LogFile = "data.log"
 logging.basicConfig(filename=LogFile,level = logging.DEBUG,format= Fore.RED +'%(asctime)s:%(name)s:%(levelname)s:%(message)s')
 
 
-def DrawScreen():
+def DrawScreen(stdscr):
   if(config.gameHasStarted == False):
-    engine.mainMenu()
+    engine.mainMenu(stdscr)
   else:
-    engine.Game()
-    sleep(config.FPS)
+    engine.Game(stdscr)
+    
 
 
 
-def main():
+def main(stdscr):
+  stdscr.erase()
   init(autoreset=True)
   run = True
-  print(Fore.CYAN +Back.BLACK+ imageloader.images("loading"))
-  input(Fore.CYAN +Back.BLACK+"Press enter twice to continue!")
+  stdscr.addstr( imageloader.images("loading"))
+  stdscr.refresh()
+  stdscr.addstr("Press enter twice to continue!")
+  stdscr.getkey()
+  stdscr.erase()
   while(run):
-    replit.clear()
-    DrawScreen()
+    stdscr.erase()
+    DrawScreen(stdscr)
+    stdscr.refresh()
     
     
       
@@ -35,4 +41,4 @@ def main():
 
 
 if (__name__ == '__main__'):
-  main()
+  wrapper(main)
