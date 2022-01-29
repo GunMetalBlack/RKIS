@@ -3,13 +3,13 @@ import engine
 import curses
 from curses import wrapper
 import imageloader
-from colorama import init, Fore, Back, Style
+from replit import audio
 import config
-from time import sleep
+
 
 
 LogFile = "data.log"
-logging.basicConfig(filename=LogFile,level = logging.DEBUG,format= Fore.RED +'%(asctime)s:%(name)s:%(levelname)s:%(message)s')
+logging.basicConfig(filename=LogFile,level = logging.DEBUG,format='%(asctime)s:%(name)s:%(levelname)s:%(message)s')
 
 
 def DrawScreen(stdscr):
@@ -21,12 +21,12 @@ def DrawScreen(stdscr):
     
 
 
-
 def main(stdscr):
+  curses.init_pair(1,curses.COLOR_BLUE,curses.COLOR_BLACK)
+  BLUE_BLACK = curses.color_pair(1)
   stdscr.erase()
-  init(autoreset=True)
   run = True
-  stdscr.addstr( imageloader.images("loading"))
+  stdscr.addstr( imageloader.images("loading"),BLUE_BLACK)
   stdscr.refresh()
   stdscr.addstr("Press enter twice to continue!")
   stdscr.getkey()

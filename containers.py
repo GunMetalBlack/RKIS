@@ -2,6 +2,8 @@ import config
 import engine
 import entity
 import main
+
+
 def SetPlayerPos(x,y):
     config.player_x = x
     config.player_y = y
@@ -9,12 +11,15 @@ def SetPlayerPos(x,y):
 
 
 def PlayerCollisionEntity():
+  entity.isContainer = False
   for i in range(len(entity.Entity)):
-    
-    if config.player_x - entity.Entity[entity.EntityID[i]]['Xpos'] == 1 or config.player_x - entity.Entity[entity.EntityID[i]]['Xpos'] == 0 or config.player_x - entity.Entity[entity.EntityID[i]]['Xpos'] == -1:
-    
-       main.logging.debug(entity.Entity[entity.EntityID[i]]["Name"])
+    if(config.player_y - entity.Entity[entity.EntityID[i]]['Ypos'] == 1 or config.player_y - entity.Entity[entity.EntityID[i]]['Ypos'] == -1):
 
+      if config.player_x - entity.Entity[entity.EntityID[i]]['Xpos'] == 1 or config.player_x - entity.Entity[entity.EntityID[i]]['Xpos'] == 0 or config.player_x - entity.Entity[entity.EntityID[i]]['Xpos'] == -1:
+        if(entity.Entity[entity.EntityID[i]]['Type'] == 'container'):  
+           entity.isContainer = True
+        
+          
 
 def PlayerMovement(stdscr):
     speed = 1

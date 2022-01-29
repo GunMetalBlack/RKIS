@@ -1,5 +1,7 @@
 import desc
 import imageloader
+
+isContainer = False
 EntityID = ['chest']
 #------------------------------------
 # Formating For Items
