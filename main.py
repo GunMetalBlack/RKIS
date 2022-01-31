@@ -22,16 +22,27 @@ def DrawScreen(stdscr):
 
 
 def main(stdscr):
+  stdscr.nodelay(1)
+  curses.noecho()
   curses.init_pair(1,curses.COLOR_BLUE,curses.COLOR_BLACK)
   BLUE_BLACK = curses.color_pair(1)
-  stdscr.erase()
-  run = True
-  stdscr.addstr( imageloader.images("loading"),BLUE_BLACK)
-  stdscr.refresh()
-  stdscr.addstr("Press enter twice to continue!")
-  stdscr.getkey()
-  stdscr.erase()
-  while(run):
+  curses.init_pair(3,158,curses.COLOR_BLACK)
+  curses.init_pair(4,209,curses.COLOR_BLACK)
+  curses.init_pair(5,209,252)
+  while (config.run == False):
+    stdscr.erase()
+    stdscr.addstr( imageloader.images("loading"),BLUE_BLACK)
+    stdscr.addstr("Press enter twice to continue!")
+    stdscr.refresh()
+    config.prev_key = config.key
+    event = stdscr.getch()
+    config.key = event if event != -1 else config.prev_key
+    if config.key not in [ord('e')]:
+        config.key = config.prev_key
+    if(config.key == ord('e')):
+      config.run = True
+      stdscr.erase()
+  while(config.run):
     stdscr.erase()
     DrawScreen(stdscr)
     stdscr.refresh()

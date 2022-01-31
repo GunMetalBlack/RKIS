@@ -2,10 +2,11 @@ import config
 import imageloader
 import curses
 import containers
-from readchar import readchar
+import time
 import main
 import random
 import entity
+
 
 
 def UserInput(stdscr,keys):
@@ -20,22 +21,26 @@ def UserInput(stdscr,keys):
 def mainMenu(stdscr):
     curses.curs_set(0)
     while config.gameHasStarted == False:
-      stdscr.erase()
+      main.logging.error(config.key)
       if(config.Awnser == 1):
         stdscr.addstr(imageloader.images("ui_s1"))
-        stdscr.refresh()
       elif(config.Awnser == 2):
         stdscr.addstr(imageloader.images("ui_s2"))
-        stdscr.refresh()
       elif(config.Awnser == 3):
         stdscr.addstr(imageloader.images("ui_s3"))
-        stdscr.refresh()
-      if(UserInput(stdscr,"r") and config.Awnser == 1):
+      config.prev_key = config.key
+      event = stdscr.getch()
+      config.key = event if event != -1 else config.prev_key
+      if config.key not in [ord('r'),ord('w')]:
+        config.key = config.prev_key
+      if(config.key == ord('r') and config.Awnser == 1):
           config.gameHasStarted = True
-      if(UserInput(stdscr,"w")):
-       config.Awnser = config.Awnser + 1
+      if(config.key == ord('w')):
+          config.Awnser = config.Awnser + 1
+          config.key = ord('s')
       if(config.Awnser > 3 or config.Awnser < 0):
-        config.Awnser = 1
+          config.Awnser = 1
+      stdscr.erase()
 
     
 
@@ -57,22 +62,22 @@ def LoadingGameMap(stdscr):
               if(il == 1):
                 stdscr.addstr(imageloader.images("map_empty"),GREY)
               if(il == 2):
-                stdscr.addstr("_",GREY)
+                stdscr.addstr(imageloader.images("map_empty01"),GREY)
               if(il == 3):
-                stdscr.addstr(",",GREY)
+                stdscr.addstr(imageloader.images("map_empty02"),GREY)
             #The Player is in the array
             if c == "2":
               stdscr.move(y,x)
               containers.SetPlayerPos(x,y)
-              stdscr.addstr(imageloader.images("map_player"))
+              stdscr.addstr(imageloader.images("map_player"),curses.color_pair(3))
             if c == "3":
               stdscr.move(y,x)
               entity.Entity['chest']['Xpos'] = x
               entity.Entity['chest']['Ypos'] = y
               if(entity.isContainer == False):
-                stdscr.addstr(entity.Entity['chest']['Graphic'])
+                stdscr.addstr(entity.Entity['chest']['Graphic'],curses.color_pair(4))
               else:
-                 stdscr.addstr(entity.Entity['chest']['Graphic'],curses.A_REVERSE)
+                 stdscr.addstr(entity.Entity['chest']['Graphic'],curses.color_pair(5))
               
         stdscr.addstr("")
 
@@ -90,10 +95,10 @@ def Draw_UI(stdscr):
 
 
 def Game(stdscr):
-    
+    stdscr.nodelay(0)
+    containers.PlayerCollisionEntity()
     LoadingGameMap(stdscr)
     Draw_UI(stdscr)
-    containers.PlayerCollisionEntity()
     containers.PlayerMovement(stdscr)
     stdscr.refresh()
     

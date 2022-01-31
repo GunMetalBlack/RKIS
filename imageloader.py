@@ -96,6 +96,12 @@ imageNames.append("map_wall")
 imageFile.append(":")
 imageNames.append("map_empty")
 
+imageFile.append(",")
+imageNames.append("map_empty01")
+
+imageFile.append("_")
+imageNames.append("map_empty02")
+
 imageFile.append("P")
 imageNames.append("map_player")
 
@@ -113,7 +119,7 @@ imageFile.append('''
             '.'-;|:.-'.&$@.& ()$%-'o.'  ||
               `>'-.!@%()@'@_%-'_.-o _.|'||
                ||-._'-.@.-'_.-' _.-o  |'||
-               ||=[ '-._.-.-'    o |'||
+               ||=[ '-._.-.-'       o |'||
                || '-.]=|| |'|      o  |'||
                ||      || |'|        _| ';
                ||      || |'|    _.-'_.-'

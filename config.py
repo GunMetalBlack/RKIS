@@ -1,8 +1,11 @@
-
+import curses
+run = False
 loading = 0
 FPS = 0.5
 Awnser = 1
 gameHasStarted = False
+key = curses.KEY_RIGHT
+prev_key = key
 player_x = 0
 player_y = 0
 player_collision = 0

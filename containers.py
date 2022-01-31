@@ -22,9 +22,13 @@ def PlayerCollisionEntity():
           
 
 def PlayerMovement(stdscr):
+    config.prev_key = config.key
+    event = stdscr.getch()
+    config.key = event if event != -1 else config.prev_key
+    if config.key not in [ord('w'),ord('a'),ord('s'),ord('d')]:
+        config.key = ord('p')
     speed = 1
-    key = stdscr.getch()
-    if(key == ord('d') and config.player_x < 18 ):
+    if(config.key == ord('d') and config.player_x < 18 ):
         
         Playery = str(config.map_01[config.player_y])
         temp = list(Playery)
@@ -33,7 +37,7 @@ def PlayerMovement(stdscr):
         Playerx = "".join(temp)
         del config.map_01[config.player_y]
         config.map_01.insert(config.player_y,Playerx)
-    elif(key == ord('a') and 1 < config.player_x ):
+    elif(config.key == ord('a') and 1 < config.player_x ):
         
         Playery = str(config.map_01[config.player_y])
         temp = list(Playery)
@@ -42,7 +46,7 @@ def PlayerMovement(stdscr):
         Playerx = "".join(temp)
         del config.map_01[config.player_y]
         config.map_01.insert(config.player_y,Playerx)
-    elif(key == ord('s') and config.player_y < 11):
+    elif(config.key == ord('s') and config.player_y < 11):
         
         Playery = str(config.map_01[config.player_y])
         temp = list(Playery)
@@ -51,7 +55,7 @@ def PlayerMovement(stdscr):
         Playerx = "".join(temp)
         del config.map_01[config.player_y]
         config.map_01.insert(config.player_y + 1,Playerx)
-    elif(key == ord('w') and 1 < config.player_y):
+    elif(config.key == ord('w') and 1 < config.player_y):
         
         Playery = str(config.map_01[config.player_y])
         temp = list(Playery)
@@ -60,5 +64,4 @@ def PlayerMovement(stdscr):
         Playerx = "".join(temp)
         del config.map_01[config.player_y]
         config.map_01.insert(config.player_y - 1,Playerx)
-    else:
-      pass
+    
