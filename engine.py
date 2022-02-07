@@ -2,7 +2,6 @@ import config
 import imageloader
 import curses
 import containers
-import time
 import main
 import random
 import entity
@@ -21,7 +20,6 @@ def UserInput(stdscr,keys):
 def mainMenu(stdscr):
     curses.curs_set(0)
     while config.gameHasStarted == False:
-      main.logging.error(config.key)
       if(config.Awnser == 1):
         stdscr.addstr(imageloader.images("ui_s1"))
       elif(config.Awnser == 2):
@@ -53,6 +51,9 @@ def LoadingGameMap(stdscr):
             if c == "0":
               stdscr.move(y,x)
               stdscr.addstr(imageloader.images("map_wall"))
+            if c == "*":
+              stdscr.move(y,x)
+              stdscr.addstr(imageloader.images("map_fill"))
             if c == "1":
               Greyrand = random.randint(236, 239)
               curses.init_pair(2,Greyrand,curses.COLOR_BLACK)
@@ -72,13 +73,14 @@ def LoadingGameMap(stdscr):
               stdscr.addstr(imageloader.images("map_player"),curses.color_pair(3))
             if c == "3":
               stdscr.move(y,x)
+              main.logging.error("NO run chest bad")
               entity.Entity['chest']['Xpos'] = x
               entity.Entity['chest']['Ypos'] = y
               if(entity.isContainer == False):
                 stdscr.addstr(entity.Entity['chest']['Graphic'],curses.color_pair(4))
               else:
                  stdscr.addstr(entity.Entity['chest']['Graphic'],curses.color_pair(5))
-              
+            
         stdscr.addstr("")
 
 
@@ -88,8 +90,8 @@ def Draw_UI(stdscr):
   stdscr.addstr(str(config.player_x))
   stdscr.addstr(",")
   stdscr.addstr(str(config.player_y))
-  stdscr.addstr(" , ChestPos ")
-  stdscr.addstr(str(entity.Entity['chest']['Ypos']))
+
+  stdscr.addstr(17,0,str(entity.CollidedEntityID).capitalize())
 
 
 

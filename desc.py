@@ -9,7 +9,7 @@ def descLoad(name):
       main.logging.error("NO DESC")
     return descFile[fileIndex]
 
-descFile.append("A Chest of Items")
+descFile.append("A dark oak chest filled with various items.")
 descNames.append("ent_chest")
 
 
