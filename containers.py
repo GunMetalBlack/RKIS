@@ -37,9 +37,10 @@ def PlayerMovement(stdscr):
     elif(config.key == ord('w') and config.player_y - engine.RenderDistanceY >= 0):
         
      config.player_y -= speed
+      #Doesn't move the right way and crashes!
     elif(config.key == ord('d') and config.player_x + engine.RenderDistanceX + 1 < len(config.map_01[0])):
        config.player_x += speed
-    elif(config.key == ord('a') and config.player_x - engine.RenderDistanceX <= 0):
+    elif(config.key == ord('a') and config.player_x - engine.RenderDistanceX >= 0):
         config.player_x -= speed
     elif(config.key == ord('i') and entity.isContainer == True):
       if(entity.CollidedEntityID != ''):
