@@ -1,5 +1,4 @@
 import main
-from colorama import init, Fore, Back, Style
 
 imageNames = []
 imageFile =[]

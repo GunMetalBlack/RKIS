@@ -6,12 +6,12 @@ Awnser = 1
 gameHasStarted = False
 key = curses.KEY_RIGHT
 prev_key = key
-player_x = 0
-player_y = 0
+player_x = 5
+player_y = 9
 player_collision = 0
 map_02=     ["00000000000000000000", 
              "01111111111111111110", 
-             "01111111111211111110", 
+             "01111111111111111110", 
              "01111111111111111110", 
              "01111111111111111110", 
              "01111111111111111110", 

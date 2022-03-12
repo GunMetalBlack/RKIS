@@ -44,44 +44,46 @@ def mainMenu(stdscr):
 
 
 
-  
-def LoadingGameMap(stdscr):
- for y, line in enumerate(config.map_01):
-        for x, c in enumerate(line):
-            if c == "0":
-              stdscr.move(y,x)
-              stdscr.addstr(imageloader.images("map_wall"))
-            if c == "*":
-              stdscr.move(y,x)
-              stdscr.addstr(imageloader.images("map_fill"))
-            if c == "1":
-              Greyrand = random.randint(236, 239)
-              curses.init_pair(2,Greyrand,curses.COLOR_BLACK)
-              GREY = curses.color_pair(2)
-              il = random.randint(1, 3)
-              stdscr.move(y,x)
-              if(il == 1):
-                stdscr.addstr(imageloader.images("map_empty"),GREY)
-              if(il == 2):
-                stdscr.addstr(imageloader.images("map_empty01"),GREY)
-              if(il == 3):
-                stdscr.addstr(imageloader.images("map_empty02"),GREY)
-            #The Player is in the array
-            if c == "2":
-              stdscr.move(y,x)
-              containers.SetPlayerPos(x,y)
-              stdscr.addstr(imageloader.images("map_player"),curses.color_pair(3))
-            if c == "3":
-              stdscr.move(y,x)
-              main.logging.error("NO run chest bad")
-              entity.Entity['chest']['Xpos'] = x
-              entity.Entity['chest']['Ypos'] = y
-              if(entity.isContainer == False):
-                stdscr.addstr(entity.Entity['chest']['Graphic'],curses.color_pair(4))
-              else:
-                 stdscr.addstr(entity.Entity['chest']['Graphic'],curses.color_pair(5))
-            
-        stdscr.addstr("")
+RenderDistanceX = 3
+RenderDistanceY = 3
+
+def RenderingGameMap(stdscr):
+  for x in range(config.player_x - RenderDistanceX, config.player_x + RenderDistanceX + 1):
+    for y in range(config.player_y - RenderDistanceY, config.player_y + RenderDistanceY + 1):
+      c = config.map_01[x][y]
+      if config.player_x == x and config.player_y == y:
+        stdscr.move(y,x)
+        stdscr.addstr(imageloader.images("map_player"),curses.color_pair(3))
+      elif c == "0":
+        stdscr.move(y,x)
+        stdscr.addstr(imageloader.images("map_wall"))
+      elif c == "*":
+        stdscr.move(y,x)
+        stdscr.addstr(imageloader.images("map_fill"))
+      elif c == "1":
+        Greyrand = random.randint(236, 239)
+        curses.init_pair(2,Greyrand,curses.COLOR_BLACK)
+        GREY = curses.color_pair(2)
+        il = random.randint(1, 3)
+        stdscr.move(y,x)
+        if(il == 1):
+          stdscr.addstr(imageloader.images("map_empty"),GREY)
+        if(il == 2):
+          stdscr.addstr(imageloader.images("map_empty01"),GREY)
+        if(il == 3):
+          stdscr.addstr(imageloader.images("map_empty02"),GREY)
+      #The Player is in the array
+      elif c == "3":
+        stdscr.move(y,x)
+        main.logging.error("NO run chest bad")
+        entity.Entity['chest']['Xpos'] = x
+        entity.Entity['chest']['Ypos'] = y
+        if(entity.isContainer == False):
+          stdscr.addstr(entity.Entity['chest']['Graphic'],curses.color_pair(4))
+        else:
+            stdscr.addstr(entity.Entity['chest']['Graphic'],curses.color_pair(5))
+      
+  stdscr.addstr("")
 
 
 
@@ -99,7 +101,7 @@ def Draw_UI(stdscr):
 def Game(stdscr):
     stdscr.nodelay(0)
     containers.PlayerCollisionEntity()
-    LoadingGameMap(stdscr)
+    RenderingGameMap(stdscr)
     Draw_UI(stdscr)
     containers.PlayerMovement(stdscr)
     stdscr.refresh()
