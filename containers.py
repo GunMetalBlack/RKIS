@@ -32,7 +32,7 @@ def PlayerMovement(stdscr):
     if config.key not in [ord('w'),ord('a'),ord('s'),ord('d'),ord('i')]:
         config.key = ord('p')
     speed = 1
-    if(config.key == ord('s') and config.player_y + engine.RenderDistanceY + 1 < len(config.map_01)):
+    if(config.key == ord('s') and config.player_y - engine.RenderDistanceY + 1 <= len(config.map_01)):
         config.player_y += speed
     elif(config.key == ord('w') and config.player_y - engine.RenderDistanceY >= 0):
         

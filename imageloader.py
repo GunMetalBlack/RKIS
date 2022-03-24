@@ -34,7 +34,7 @@ This is a adventure ascii game,
 it was made without the use of a graphics library.
 
 To navigate through the main menu press the
-"W" key twice, to enter a menu press the "R" key.
+"W" key, to enter a menu press the "R" key.
 
 Have Fun :D
 PS: There may be some delay in Key Inputs due to Replit

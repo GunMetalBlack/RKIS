@@ -84,8 +84,7 @@ def RenderingGameMap(stdscr):
         if(il == 3):
           stdscr.addstr(imageloader.images("map_empty02"),GREY)
       elif char_from_map == "3":
-        stdscr.move(screen_space_y, screen_space_x)
-        # This Entity Code is Hacky and Bad. I should really redo this!
+      #Bad code buggy boi
         entity.Entity['chest']['Xpos'] = world_space_x
         entity.Entity['chest']['Ypos'] = world_space_y
         if(entity.isContainer == False):
