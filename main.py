@@ -24,6 +24,7 @@ def DrawScreen(stdscr):
 def main(stdscr):
   stdscr.nodelay(1)
   curses.noecho()
+  curses.cbreak()
   #init COLORS----------------------------
   curses.init_pair(1,curses.COLOR_BLUE,curses.COLOR_BLACK)
   BLUE_BLACK = curses.color_pair(1)

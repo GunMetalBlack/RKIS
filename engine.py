@@ -18,7 +18,7 @@ def UserInput(stdscr,keys):
   return keyisPressed
 
 def mainMenu(stdscr):
-    curses.curs_set(0)
+    curses.curs_set(2)
     while config.gameHasStarted == False:
       if(config.Awnser == 1):
         stdscr.addstr(imageloader.images("ui_s1"))
@@ -85,8 +85,8 @@ def RenderingGameMap(stdscr):
           stdscr.addstr(imageloader.images("map_empty02"),GREY)
       elif char_from_map == "3":
       #Bad code buggy boi
-        entity.Entity['chest']['Xpos'] = world_space_x
-        entity.Entity['chest']['Ypos'] = world_space_y
+        entity.Entity['chest']['Xpos'] = screen_space_x
+        entity.Entity['chest']['Ypos'] = screen_space_y
         if(entity.isContainer == False):
           stdscr.addstr(entity.Entity['chest']['Graphic'],curses.color_pair(4))
         else:
