@@ -5,7 +5,7 @@ import containers
 import main
 import random
 import entity
-
+from time import sleep
 
 
 def UserInput(stdscr,keys):
@@ -18,7 +18,7 @@ def UserInput(stdscr,keys):
   return keyisPressed
 
 def mainMenu(stdscr):
-    curses.curs_set(2)
+    curses.curs_set(0)
     while config.gameHasStarted == False:
       if(config.Awnser == 1):
         stdscr.addstr(imageloader.images("ui_s1"))
@@ -108,10 +108,14 @@ def Draw_UI(stdscr):
 
 
 def Game(stdscr):
-    stdscr.nodelay(0)
+    stdscr.nodelay(True)
+    curses.noecho()
+    curses.cbreak()
     containers.PlayerCollisionEntity()
     RenderingGameMap(stdscr)
     Draw_UI(stdscr)
     containers.PlayerMovement(stdscr)
     stdscr.refresh()
+    sleep(.2)
+    
     

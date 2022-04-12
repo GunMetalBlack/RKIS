@@ -22,7 +22,7 @@ def DrawScreen(stdscr):
 
 
 def main(stdscr):
-  stdscr.nodelay(1)
+  stdscr.nodelay(True)
   curses.noecho()
   curses.cbreak()
   #init COLORS----------------------------

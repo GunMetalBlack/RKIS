@@ -1,7 +1,6 @@
 import config
 import engine
 import entity
-import main
 import curses
 
 
@@ -26,6 +25,7 @@ def PlayerCollisionEntity():
           
 
 def PlayerMovement(stdscr):
+
     config.prev_key = config.key
     event = stdscr.getch()
     config.key = event if event != -1 else config.prev_key
