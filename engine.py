@@ -44,8 +44,8 @@ def mainMenu(stdscr):
 
 
 
-RenderDistanceX = 3
-RenderDistanceY = 3
+RenderDistanceX = 5
+RenderDistanceY = 5
 
 def RenderingGameMap(stdscr):
   # Iterate Over Rendered Region
@@ -61,27 +61,27 @@ def RenderingGameMap(stdscr):
       char_from_map = config.map_01[world_space_x][world_space_y]
       # If Center of Screen, Replace World Char w/ Player Char
       if i == 0 and j == 0:
-        stdscr.move(screen_space_y, screen_space_x)
+        stdscr.move(screen_space_y, screen_space_x + 10)
         stdscr.addstr(imageloader.images("map_player"),curses.color_pair(3))
       
       # Chained 'elif' - Convert from Level Char to Render Char using 'imageloader'
       elif char_from_map == "0":
-        stdscr.move(screen_space_y, screen_space_x)
+        stdscr.move(screen_space_y, screen_space_x+ 10)
         stdscr.addstr(imageloader.images("map_wall"))
       elif char_from_map == "*":
-        stdscr.move(screen_space_y, screen_space_x)
+        stdscr.move(screen_space_y, screen_space_x+ 10)
         stdscr.addstr(imageloader.images("map_fill"))
       elif char_from_map == "1":
         Greyrand = random.randint(236, 239)
         curses.init_pair(2,Greyrand,curses.COLOR_BLACK)
         GREY = curses.color_pair(2)
-        il = random.randint(1, 3)
-        stdscr.move(screen_space_y, screen_space_x)
-        if(il == 1):
+        il = hash(str(world_space_x)+str(world_space_y)) % 3
+        stdscr.move(screen_space_y, screen_space_x+ 10)
+        if(il == 0):
           stdscr.addstr(imageloader.images("map_empty"),GREY)
-        if(il == 2):
+        if(il == 1):
           stdscr.addstr(imageloader.images("map_empty01"),GREY)
-        if(il == 3):
+        if(il == 2):
           stdscr.addstr(imageloader.images("map_empty02"),GREY)
       elif char_from_map == "3":
       #Bad code buggy boi
@@ -116,6 +116,7 @@ def Game(stdscr):
     Draw_UI(stdscr)
     containers.PlayerMovement(stdscr)
     stdscr.refresh()
-    sleep(.2)
+    
+
     
     

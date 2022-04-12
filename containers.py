@@ -2,7 +2,7 @@ import config
 import engine
 import entity
 import curses
-
+import main
 
 def SetPlayerPos(x,y):
     config.player_x = x
@@ -25,23 +25,27 @@ def PlayerCollisionEntity():
           
 
 def PlayerMovement(stdscr):
-
+    main.logging.debug('Current Key: %s, Previous Key = %s', config.prev_key, config.key)
     config.prev_key = config.key
     event = stdscr.getch()
     config.key = event if event != -1 else config.prev_key
-    if config.key not in [ord('w'),ord('a'),ord('s'),ord('d'),ord('i')]:
-        config.key = ord('p')
-    speed = 1
+    if event != -1:
+      config.key = event
+    else:
+      config.key = ord(']')
+    if(config.prev_key == config.key):
+      return
+    main.logging.debug('Not passing! your mom ;D')  
     if(config.key == ord('s') and config.player_y - engine.RenderDistanceY + 1 <= len(config.map_01)):
-        config.player_y += speed
+        config.player_y += config.speed
     elif(config.key == ord('w') and config.player_y - engine.RenderDistanceY >= 0):
         
-     config.player_y -= speed
+     config.player_y -= config.speed
       #Doesn't move the right way and crashes!
     elif(config.key == ord('d') and config.player_x + engine.RenderDistanceX + 1 < len(config.map_01[0])):
-       config.player_x += speed
+       config.player_x += config.speed
     elif(config.key == ord('a') and config.player_x - engine.RenderDistanceX >= 0):
-        config.player_x -= speed
+        config.player_x -= config.speed
     elif(config.key == ord('i') and entity.isContainer == True):
       if(entity.CollidedEntityID != ''):
           stdscr.erase()
