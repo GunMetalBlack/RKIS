@@ -54,5 +54,6 @@ def PlayerMovement(stdscr):
           stdscr.addstr("Press Any Key To Exit!",curses.color_pair(6))
           stdscr.refresh()
           stdscr.getkey()
-          
+    else:
+      pass
       

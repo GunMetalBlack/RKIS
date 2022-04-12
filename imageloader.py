@@ -92,7 +92,7 @@ imageNames.append("ui_screenbar")
 imageFile.append("█")
 imageNames.append("map_wall")
 
-imageFile.append(":")
+imageFile.append("*")
 imageNames.append("map_empty")
 
 imageFile.append(",")
