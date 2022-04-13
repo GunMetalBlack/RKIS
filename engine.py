@@ -56,27 +56,28 @@ def RenderingGameMap(stdscr):
       screen_space_y = j + RenderDistanceY
       world_space_x = i + config.player_x
       world_space_y = j + config.player_y
-
+      global screen_space_offset
+      screen_space_offset = int((config.cols - RenderDistanceX)/2)
       # Lookup Char from World
       char_from_map = config.map_01[world_space_x][world_space_y]
       # If Center of Screen, Replace World Char w/ Player Char
       if i == 0 and j == 0:
-        stdscr.move(screen_space_y, screen_space_x + 10)
+        stdscr.move(screen_space_y, screen_space_x + screen_space_offset)
         stdscr.addstr(imageloader.images("map_player"),curses.color_pair(3))
       
       # Chained 'elif' - Convert from Level Char to Render Char using 'imageloader'
       elif char_from_map == "0":
-        stdscr.move(screen_space_y, screen_space_x+ 10)
+        stdscr.move(screen_space_y, screen_space_x + screen_space_offset)
         stdscr.addstr(imageloader.images("map_wall"))
       elif char_from_map == "*":
-        stdscr.move(screen_space_y, screen_space_x+ 10)
+        stdscr.move(screen_space_y, screen_space_x + screen_space_offset)
         stdscr.addstr(imageloader.images("map_fill"))
       elif char_from_map == "1":
         Greyrand = random.randint(236, 239)
         curses.init_pair(2,Greyrand,curses.COLOR_BLACK)
         GREY = curses.color_pair(2)
         il = hash(str(world_space_x)+str(world_space_y)) % 3
-        stdscr.move(screen_space_y, screen_space_x+ 10)
+        stdscr.move(screen_space_y, screen_space_x + screen_space_offset)
         if(il == 0):
           stdscr.addstr(imageloader.images("map_empty"),GREY)
         if(il == 1):
@@ -97,6 +98,7 @@ def RenderingGameMap(stdscr):
 
 
 def Draw_UI(stdscr):
+  stdscr.move(13,5 + screen_space_offset)
   stdscr.addstr(imageloader.images("ui_screenbar"))     
   stdscr.addstr(str(config.player_x))
   stdscr.addstr(",")
@@ -112,6 +114,7 @@ def Game(stdscr):
     curses.noecho()
     curses.cbreak()
     containers.PlayerCollisionEntity()
+    config.cols = stdscr.getmaxyx()[1]
     RenderingGameMap(stdscr)
     Draw_UI(stdscr)
     containers.PlayerMovement(stdscr)

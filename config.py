@@ -8,6 +8,7 @@ gameHasStarted = False
 key = curses.KEY_RIGHT
 prev_key = key
 player_x = 5
+cols = 0
 player_y = 9
 player_collision = 0
 map_02=     ["0000000000000000000000000000000000000000", 
