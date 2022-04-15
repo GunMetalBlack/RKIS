@@ -27,6 +27,12 @@ def main(stdscr):
   curses.cbreak()
   #init COLORS----------------------------
   curses.init_pair(1,curses.COLOR_BLUE,curses.COLOR_BLACK)
+  #green wt green bg
+  curses.init_pair(13,48,35)
+  #red wt green bg
+  curses.init_pair(14,197,35)
+  #blue wt green bg
+  curses.init_pair(15,19,35)
   BLUE_BLACK = curses.color_pair(1)
   curses.init_pair(3,158,curses.COLOR_BLACK)
   curses.init_pair(4,209,curses.COLOR_BLACK)

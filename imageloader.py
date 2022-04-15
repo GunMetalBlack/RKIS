@@ -106,6 +106,8 @@ imageNames.append("map_player")
 
 imageFile.append(" ")
 imageNames.append("map_fill")
+imageFile.append("@")
+imageNames.append("map_grass")
 #ITEM DESC imageFil
 imageFile.append('''
                      

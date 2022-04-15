@@ -1,0 +1,45 @@
+ART------------------------------------------
+MAP 
+Bosses
+Mabey card details
+Template
+Story
+Ascii border
+Boss fight arena 
+card names
+boss text
+Store screen EZ
+
+
+
+
+---Card Systems---
+*Only one card at a time in a diffrent screen
+*text move like the start screen
+
+Create a list for cards with ascii images and stats
+random stats for the begining
+each win leads to a change skill for improvement 
+with each loss the players cards get weaker they chose what card get the worst downgrade 
+points for each loss allows randomize card for easier gameplay
+------------------------------------------------------------------------------------------
+
+------Fight system------------------------------------------------------------------------------
+Garbo story the player fights MainFrame RKIS
+locked in prison
+A key to start the boss fight call it plug in 
+mad lib sentence templemlates for desc_card
+you can play all five cards at the same time
+
+3 Bosses max
+Jail Break ------- Copy your cards
+Paywall ---------- pay a card to use a card 
+Senator Armstrong -------------- Too strong never dies beef games ends from destruction he deicides to destroy Rkis himself 
+
+Chose card to fight and card the player attacks first 
+Play attack animation 
+Scale system tip the scale
+
+Collecting cards -------------------------------
+Forced fight the first lose not end game 
+Mini world   
