@@ -16,7 +16,7 @@ def DrawScreen(stdscr):
   if(config.gameHasStarted == False):
     engine.mainMenu(stdscr)
   else:
-    stdscr.erase()
+    #stdscr.erase()
     engine.Game(stdscr)
     
 
@@ -28,11 +28,11 @@ def main(stdscr):
   #init COLORS----------------------------
   curses.init_pair(1,curses.COLOR_BLUE,curses.COLOR_BLACK)
   #green wt green bg
-  curses.init_pair(13,48,35)
+  curses.init_pair(13,48,curses.COLOR_BLACK)
   #red wt green bg
-  curses.init_pair(14,197,35)
+  curses.init_pair(14,197,curses.COLOR_BLACK)
   #blue wt green bg
-  curses.init_pair(15,19,35)
+  curses.init_pair(15,19,curses.COLOR_BLACK)
   BLUE_BLACK = curses.color_pair(1)
   curses.init_pair(3,158,curses.COLOR_BLACK)
   curses.init_pair(4,209,curses.COLOR_BLACK)
@@ -53,9 +53,9 @@ def main(stdscr):
       config.run = True
       stdscr.erase()
   while(config.run):
-    stdscr.erase()
+    #stdscr.erase()
     DrawScreen(stdscr)
-    stdscr.refresh()
+    #stdscr.refresh()
     
     
       

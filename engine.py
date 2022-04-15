@@ -5,7 +5,7 @@ import containers
 import main
 import random
 import entity
-from time import sleep
+import time
 
 
 def UserInput(stdscr, keys):
@@ -76,19 +76,15 @@ def RenderingGameMap(stdscr):
                             screen_space_offset)
                 stdscr.addstr(imageloader.images("map_fill"))
             elif char_from_map == "6":
-                grass_color = hash(str(world_space_x)+str(world_space_y)) % 30
-
+                grass_colors = [curses.color_pair(14), curses.color_pair(15), curses.color_pair(13)]
+                grass_chars = ['@','X']
+                grass_color_index = hash(str(world_space_x)+str(world_space_y)) % 30
+                if(grass_color_index > len(grass_colors) - 1): grass_color_index = len(grass_colors) - 1
+                grass_char_index = hash(str(world_space_x)+str(world_space_y)+"filler") % 3
+                if(grass_char_index > len(grass_chars) - 1): grass_char_index = len(grass_chars) - 1
                 stdscr.move(screen_space_y, screen_space_x +
                             screen_space_offset)
-                if(grass_color == 0):
-                    red = curses.color_pair(14)
-                    stdscr.addstr(imageloader.images("map_grass"), red)
-                elif(grass_color == 1):
-                    blue = curses.color_pair(15)
-                    stdscr.addstr(imageloader.images("map_grass"), blue)
-                else:
-                    green = curses.color_pair(13)
-                    stdscr.addstr(imageloader.images("map_grass"), green)
+                stdscr.addstr(grass_chars[grass_char_index], grass_colors[grass_color_index])
             elif char_from_map == "1":
                 Greyrand = random.randint(236, 239)
                 curses.init_pair(2, Greyrand, curses.COLOR_BLACK)
@@ -127,7 +123,7 @@ def Draw_UI(stdscr):
     stdscr.addstr(str(config.player_x))
     stdscr.addstr(",")
     stdscr.addstr(str(config.player_y))
-
+    stdscr.addstr("\nFPS: " + str(config.TrueFps))
     stdscr.addstr(17, 0, str(entity.CollidedEntityID).capitalize())
 
 
@@ -137,7 +133,14 @@ def Game(stdscr):
     curses.cbreak()
     containers.PlayerCollisionEntity()
     config.cols = stdscr.getmaxyx()[1]
-    RenderingGameMap(stdscr)
-    Draw_UI(stdscr)
     containers.PlayerMovement(stdscr)
-    stdscr.refresh()
+    if config.needFrameUpdate:
+        RenderingGameMap(stdscr)
+        Draw_UI(stdscr)
+    config.counter+=1
+    if (time.time() - config.start_time) > config.x :
+        config.TrueFps = config.counter / (time.time() - config.start_time)
+        config.counter = 0
+        config.start_time = time.time()
+
+        #stdscr.refresh()

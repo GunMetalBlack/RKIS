@@ -32,7 +32,10 @@ def PlayerMovement(stdscr):
         config.key = event
     else:
         config.key = ord(']')
+    
+    config.needFrameUpdate = True
     if(config.prev_key == config.key):
+        config.needFrameUpdate = False
         return
 
     if(config.key == ord('s') and config.map_01[config.player_x][config.player_y + 1] != "0"):
