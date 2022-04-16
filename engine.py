@@ -19,27 +19,28 @@ def UserInput(stdscr, keys):
 
 
 def mainMenu(stdscr):
-    curses.curs_set(0)
-    while config.gameHasStarted == False:
-        if(config.Awnser == 1):
-            stdscr.addstr(imageloader.images("ui_s1"))
-        elif(config.Awnser == 2):
-            stdscr.addstr(imageloader.images("ui_s2"))
-        elif(config.Awnser == 3):
-            stdscr.addstr(imageloader.images("ui_s3"))
-        config.prev_key = config.key
-        event = stdscr.getch()
-        config.key = event if event != -1 else config.prev_key
-        if config.key not in [ord('r'), ord('w')]:
-            config.key = config.prev_key
-        if(config.key == ord('r') and config.Awnser == 1):
-            config.gameHasStarted = True
-        if(config.key == ord('w')):
-            config.Awnser = config.Awnser + 1
-            config.key = ord('s')
-        if(config.Awnser > 3 or config.Awnser < 0):
-            config.Awnser = 1
-        stdscr.erase()
+    if(config.selected_main_menu_option == 1):
+        stdscr.addstr(imageloader.images("ui_s1"))
+    elif(config.selected_main_menu_option == 2):
+        stdscr.addstr(imageloader.images("ui_s2"))
+    elif(config.selected_main_menu_option == 3):
+        stdscr.addstr(imageloader.images("ui_s3"))
+    config.prev_key = config.key
+    event = stdscr.getch()
+    config.key = event if event != -1 else config.prev_key
+    if config.key not in [ord('\n'), ord('w')]:
+        config.key = config.prev_key
+    if(config.key == ord('\n') and config.selected_main_menu_option == 1):
+        config.current_screen = "open_world"
+    if(config.key == ord('w')):
+        config.selected_main_menu_option = config.selected_main_menu_option + 1
+        config.key = 0
+    if(config.key == ord('s')):
+        config.selected_main_menu_option = config.selected_main_menu_option - 1
+        config.key = 0
+    if(config.selected_main_menu_option > 3 or config.selected_main_menu_option < 0):
+        config.selected_main_menu_option = 1
+    stdscr.erase()
 
 
 RenderDistanceX = 30
@@ -123,7 +124,7 @@ def Draw_UI(stdscr):
     stdscr.addstr(str(config.player_x))
     stdscr.addstr(",")
     stdscr.addstr(str(config.player_y))
-    stdscr.addstr("\nFPS: " + str(config.TrueFps))
+    stdscr.addstr("\nFPS: " + str(config.true_fps))
     stdscr.addstr(17, 0, str(entity.CollidedEntityID).capitalize())
 
 
@@ -137,10 +138,9 @@ def Game(stdscr):
     if config.needFrameUpdate:
         RenderingGameMap(stdscr)
         Draw_UI(stdscr)
-    config.counter+=1
-    if (time.time() - config.start_time) > config.x :
-        config.TrueFps = config.counter / (time.time() - config.start_time)
-        config.counter = 0
+    if (time.time() - config.start_time) > config.fps_update_rate :
+        config.true_fps = config.frame_count / (time.time() - config.start_time)
+        config.frame_count = 0
         config.start_time = time.time()
 
-        #stdscr.refresh()
+        # stdscr.refresh()

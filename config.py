@@ -1,20 +1,22 @@
 import curses
 import map
 import time
-run = False
+import cards
+
+cols = 0
+current_screen = "splash"
+fps_update_rate = 1 # displays the frame rate every 1 second
+frame_count = 0
+key = 0
 loading = 0
-speed = 1
-Awnser = 1
-gameHasStarted = False
+main_deck = cards.Deck()
+map_01 = map.map_01
 needFrameUpdate = True
-key = curses.KEY_RIGHT
-prev_key = key
+player_collision = 0
 player_x = 350
 player_y = 350
-cols = 0
-player_collision = 0
-map_01 = map.map_02
-TrueFps = 0
+prev_key = key
+selected_main_menu_option = 1
+speed = 1
 start_time = time.time()
-x = 1 # displays the frame rate every 1 second
-counter = 0
+true_fps = 0

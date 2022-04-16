@@ -31,7 +31,7 @@ def PlayerMovement(stdscr):
         config.key = event
     else:
         config.key = ord(']')
-    
+    config.frame_count += 1
     config.needFrameUpdate = True
     if(config.prev_key == config.key):
         config.needFrameUpdate = False
