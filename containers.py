@@ -24,7 +24,6 @@ def PlayerCollisionEntity():
 
 
 def PlayerMovement(stdscr):
-    main.logging.debug('Current Key: %s, Previous Key = %s',config.prev_key, config.key)
     config.prev_key = config.key
     event = stdscr.getch()
     config.key = event if event != -1 else config.prev_key
