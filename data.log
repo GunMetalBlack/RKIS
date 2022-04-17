@@ -1,125 +1,287 @@
-
-2022-04-16 01:54:26,397:root:DEBUG:Card:
-Name = %s
-Health = %s
-Defense = %s
-Energy = %s
-Description = %s
-2022-04-16 01:56:40,165:root:DEBUG:Card:
-Name = fasterburn
+2022-04-16 22:59:06,152:root:DEBUG:Card:
+Name = substancemirror
 Health = 3
-Defense = 2
-Energy = 3
-Description = This card is a optimistic it bears a green hue and is a GENERIC type.
-2022-04-16 02:58:20,806:root:DEBUG:Card:
-Name = shakeart
-Health = 3
-Attack = 3
-Defense = 3
-Energy = 3
-Description = This card is a software. It bears a slate-greyhue and is aGENERICtype.
-2022-04-16 02:59:22,168:root:DEBUG:Card:
-Name = congressalthough
-Health = 1
-Attack = 1
+Attack = 2
 Defense = 1
-Energy = 3
-Description = This card is a previous. It bears a emeraldhue and is aGENERICtype.
-2022-04-16 03:05:06,882:root:DEBUG:Card:
-Name = curiousthird
-Health = 3
-Attack = 2
-Defense = 2
-Energy = 3
-Description = This card is a brother. It bears a han-purplehue and is aGENERICtype.
-2022-04-16 03:05:20,269:root:DEBUG:Card:
-Name = fuelacross
-Health = 1
-Attack = 1
-Defense = 1
-Energy = 3
-Description = This card is a birthday. It bears a gambogehue and is aGENERICtype.
-2022-04-16 03:07:46,243:root:DEBUG:Card:
-Name = wifeaccount
-Health = 1
-Attack = 2
-Defense = 2
-Energy = 3
-Description = This card is a lift. It bears a mustardhue and is aGENERICtype.
-2022-04-16 03:07:49,909:root:DEBUG:Card:
-Name = secretvalley
-Health = 1
-Attack = 2
-Defense = 3
 Energy = 1
-Description = This card is a simple. It bears a goldhue and is aGENERICtype.
-2022-04-16 03:07:52,698:root:DEBUG:Card:
-Name = searchwritten
-Health = 1
-Attack = 1
-Defense = 2
-Energy = 2
-Description = This card is a actor. It bears a plumhue and is aGENERICtype.
-2022-04-16 03:07:55,331:root:DEBUG:Card:
-Name = teamboy
-Health = 1
-Attack = 1
-Defense = 3
-Energy = 3
-Description = This card is a local. It bears a cornflowerhue and is aGENERICtype.
-2022-04-16 03:07:58,235:root:DEBUG:Card:
-Name = rodclimate
-Health = 1
+Description = This card is a faithful. It bears a fuchsiahue and is aGENERICtype.
+2022-04-16 22:59:49,640:root:DEBUG:Card:
+Name = nobodyaccept
+Health = 2
 Attack = 1
 Defense = 1
-Energy = 2
-Description = This card is a college. It bears a jadehue and is aGENERICtype.
-2022-04-16 03:08:03,558:root:DEBUG:Card:
-Name = directwonder
+Energy = 1
+Description = This card is a waterlogged. It bears a vermilionhue and is aGENERICtype.
+2022-04-16 23:00:13,965:root:DEBUG:Card:
+Name = touchwild
 Health = 2
 Attack = 2
 Defense = 3
 Energy = 1
-Description = This card is a group. It bears a royal-bluehue and is aGENERICtype.
-2022-04-16 03:08:07,022:root:DEBUG:Card:
-Name = deathalong
-Health = 1
-Attack = 1
-Defense = 2
-Energy = 3
-Description = This card is a distance. It bears a olivinehue and is aGENERICtype.
-2022-04-16 03:08:48,364:root:DEBUG:Card:
-Name = shellsnest
+Description = This card is a liquid. It bears a dandelionhue and is aGENERICtype.
+2022-04-16 23:00:50,908:root:DEBUG:Card:
+Name = quietlyants
 Health = 3
 Attack = 3
-Defense = 2
-Energy = 3
-Description = This card is a respect. It bears a school-bus-yellowhue and is aGENERICtype.
-2022-04-16 03:10:24,098:root:DEBUG:Card:
-Name = waveliquid
-Health = 1
-Attack = 2
-Defense = 2
+Defense = 1
 Energy = 1
-Description = This card is a fuzzy. It bears a brownhue and is aGENERICtype.
-2022-04-16 03:14:24,230:root:DEBUG:Card:
-Name = growthhave
+Description = This card is a velvety. It bears a raw-umberhue and is aGENERICtype.
+2022-04-16 23:01:24,106:root:DEBUG:Card:
+Name = insiderelated
 Health = 3
 Attack = 3
 Defense = 3
 Energy = 3
-Description = This card is a diamond. It bears a russethue and is aGENERICtype.
-2022-04-16 03:15:27,204:root:DEBUG:Card:
-Name = coastfear
-Health = 3
+Description = This card is a variation. It bears a cherry-blossom-pinkhue and is aGENERICtype.
+2022-04-16 23:01:44,417:root:DEBUG:Card:
+Name = wifebasechain
+Health = 2
 Attack = 3
+Defense = 3
+Energy = 3
+Description = This card is a reality. It bears a aquahue and is aGENERICtype.
+2022-04-16 23:10:18,150:root:DEBUG:Card:
+Name = planfeet
+Health = 3
+Attack = 1
 Defense = 2
-Energy = 2
-Description = This card is a used. It bears a dandelionhue and is aGENERICtype.
-2022-04-16 03:15:33,973:root:DEBUG:Card:
-Name = onebreeze
+Energy = 3
+Description = This card is a pushy. It bears a dandelionhue and is aGENERICtype.
+2022-04-16 23:11:33,421:root:DEBUG:Card:
+Name = togethervisit
 Health = 2
 Attack = 2
 Defense = 1
+Energy = 3
+Description = This card is a fixed. It bears a periwinklehue and is aGENERICtype.
+2022-04-16 23:12:00,300:root:DEBUG:Card:
+Name = morningslip
+Health = 1
+Attack = 1
+Defense = 2
+Energy = 2
+Description = This card is a voluminous. It bears a amethysthue and is aGENERICtype.
+2022-04-16 23:14:42,920:root:DEBUG:Card:
+Name = forgetpain
+Health = 1
+Attack = 2
+Defense = 1
+Energy = 2
+Description = This card is a worker. It bears a bronzehue and is aGENERICtype.
+2022-04-16 23:29:45,118:root:DEBUG:Card:
+Name = meltedmerely
+Health = 2
+Attack = 3
+Defense = 3
+Energy = 3
+Description = This card is a nation. It bears a quartz-greyhue and is aGENERICtype.
+2022-04-16 23:30:34,859:root:DEBUG:Card:
+Name = belttelephone
+Health = 1
+Attack = 1
+Defense = 1
+Energy = 2
+Description = This card is a stupid. It bears a pucehue and is aGENERICtype.
+2022-04-16 23:44:55,861:root:DEBUG:Card:
+Name = picturepond
+Health = 2
+Attack = 2
+Defense = 1
+Energy = 3
+Description = This card is a purple. It bears a cornhue and is aGENERICtype.
+2022-04-16 23:52:39,413:root:DEBUG:Card:
+Name = itscame
+Health = 2
+Attack = 3
+Defense = 2
+Energy = 2
+Description = This card is a novel. It bears a plumhue and is aGENERICtype.
+2022-04-16 23:53:35,357:root:DEBUG:Card:
+Name = purposesitting
+Health = 2
+Attack = 1
+Defense = 1
+Energy = 2
+Description = This card is a extroverted. It bears a papaya-whiphue and is aGENERICtype.
+2022-04-16 23:53:52,012:root:DEBUG:Card:
+Name = holeairplane
+Health = 1
+Attack = 1
+Defense = 3
+Energy = 2
+Description = This card is a branch. It bears a zucchinihue and is aGENERICtype.
+2022-04-16 23:54:53,311:root:DEBUG:Card:
+Name = runcarry
+Health = 3
+Attack = 2
+Defense = 1
 Energy = 1
-Description = This card is a dry. It bears a flaxhue and is aGENERICtype.
+Description = This card is a jolly. It bears a magnoliahue and is aGENERICtype.
+2022-04-16 23:56:06,950:root:DEBUG:Card:
+Name = legdawn
+Health = 3
+Attack = 2
+Defense = 1
+Energy = 3
+Description = This card is a upset. It bears a greenhue and is aGENERICtype.
+2022-04-16 23:56:43,151:root:DEBUG:Card:
+Name = truthkind
+Health = 1
+Attack = 1
+Defense = 1
+Energy = 1
+Description = This card is a anybody. It bears a mauvehue and is aGENERICtype.
+2022-04-16 23:58:41,925:root:DEBUG:Card:
+Name = picturefallen
+Health = 3
+Attack = 2
+Defense = 2
+Energy = 2
+Description = This card is a life. It bears a cerisehue and is aGENERICtype.
+2022-04-16 23:59:23,698:root:DEBUG:Card:
+Name = suddenwestern
+Health = 3
+Attack = 3
+Defense = 2
+Energy = 3
+Description = This card is a professional. It bears a midnight-bluehue and is aGENERICtype.
+2022-04-17 00:01:39,149:root:DEBUG:Card:
+Name = veryessential
+Health = 2
+Attack = 1
+Defense = 1
+Energy = 1
+Description = This card is a pen. It bears a amberhue and is aGENERICtype.
+2022-04-17 00:02:09,298:root:DEBUG:Card:
+Name = capmember
+Health = 3
+Attack = 3
+Defense = 3
+Energy = 3
+Description = This card is a vain. It bears a royal-purplehue and is aGENERICtype.
+2022-04-17 00:03:18,480:root:DEBUG:Card:
+Name = recentlythee
+Health = 1
+Attack = 3
+Defense = 1
+Energy = 3
+Description = This card is a quality. It bears a eggplanthue and is aGENERICtype.
+2022-04-17 00:04:50,929:root:DEBUG:Card:
+Name = knownsit
+Health = 3
+Attack = 1
+Defense = 3
+Energy = 2
+Description = This card is a date. It bears a charcoalhue and is aGENERICtype.
+2022-04-17 00:07:13,321:root:DEBUG:Card:
+Name = fueltrace
+Health = 1
+Attack = 3
+Defense = 2
+Energy = 3
+Description = This card is a opulent. It bears a orangehue and is aGENERICtype.
+2022-04-17 00:08:39,741:root:DEBUG:Card:
+Name = primitivescientific
+Health = 1
+Attack = 2
+Defense = 2
+Energy = 3
+Description = This card is a shift. It bears a bluehue and is aGENERICtype.
+2022-04-17 00:11:10,214:root:DEBUG:Card:
+Name = objecthigh
+Health = 2
+Attack = 2
+Defense = 3
+Energy = 1
+Description = This card is a affect. It bears a wheathue and is aGENERICtype.
+2022-04-17 00:14:38,756:root:DEBUG:Card:
+Name = wishtopic
+Health = 1
+Attack = 1
+Defense = 3
+Energy = 3
+Description = This card is a payment. It bears a violethue and is aGENERICtype.
+2022-04-17 00:15:09,002:root:DEBUG:Card:
+Name = easycorrect
+Health = 3
+Attack = 2
+Defense = 2
+Energy = 1
+Description = This card is a clothes. It bears a powder-bluehue and is aGENERICtype.
+2022-04-17 00:16:04,939:root:DEBUG:Card:
+Name = theremassage
+Health = 3
+Attack = 1
+Defense = 1
+Energy = 2
+Description = This card is a green. It bears a titanium-whitehue and is aGENERICtype.
+2022-04-17 00:18:40,053:root:DEBUG:Card:
+Name = finishdig
+Health = 2
+Attack = 1
+Defense = 3
+Energy = 2
+Description = This card is a indolent. It bears a han-purplehue and is aGENERICtype.
+2022-04-17 00:18:52,939:root:DEBUG:Card:
+Name = scenespeed
+Health = 1
+Attack = 2
+Defense = 3
+Energy = 2
+Description = This card is a worthwhile. It bears a sky-bluehue and is aGENERICtype.
+2022-04-17 00:23:01,262:root:DEBUG:Card:
+Name = materialbuilt
+Health = 1
+Attack = 1
+Defense = 2
+Energy = 3
+Description = This card is a voluminous. It bears a persimmonhue and is aGENERICtype.
+2022-04-17 00:25:21,195:root:DEBUG:Card:
+Name = stomachsink
+Health = 3
+Attack = 1
+Defense = 3
+Energy = 1
+Description = This card is a sneaky. It bears a purplehue and is aGENERICtype.
+2022-04-17 00:27:52,390:root:DEBUG:Card:
+Name = greatestcourage
+Health = 3
+Attack = 3
+Defense = 1
+Energy = 3
+Description = This card is a bunch. It bears a spring-budhue and is aGENERICtype.
+2022-04-17 00:28:41,233:root:DEBUG:Card:
+Name = grassthird
+Health = 2
+Attack = 1
+Defense = 3
+Energy = 1
+Description = This card is a present. It bears a cobalthue and is aGENERICtype.
+2022-04-17 00:29:50,382:root:DEBUG:Card:
+Name = conversationwestern
+Health = 1
+Attack = 3
+Defense = 3
+Energy = 1
+Description = This card is a giant. It bears a dandelionhue and is aGENERICtype.
+2022-04-17 00:30:41,777:root:DEBUG:Card:
+Name = greeneverybody
+Health = 1
+Attack = 1
+Defense = 1
+Energy = 3
+Description = This card is a quote. It bears a cyanhue and is aGENERICtype.
+2022-04-17 00:32:19,500:root:DEBUG:Card:
+Name = straightlion
+Health = 2
+Attack = 3
+Defense = 2
+Energy = 3
+Description = This card is a ornery. It bears a carminehue and is aGENERICtype.
+2022-04-17 00:33:09,678:root:DEBUG:Card:
+Name = beanactive
+Health = 1
+Attack = 1
+Defense = 2
+Energy = 2
+Description = This card is a star. It bears a platinumhue and is aGENERICtype.

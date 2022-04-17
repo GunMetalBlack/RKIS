@@ -20,3 +20,5 @@ selected_main_menu_option = 1
 speed = 1
 start_time = time.time()
 true_fps = 0
+npc_collide = False
+card_id_selection = 1

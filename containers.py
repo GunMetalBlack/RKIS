@@ -1,8 +1,10 @@
+from re import T
 import config
 import engine
 import entity
 import curses
 import main
+import desc
 
 
 def SetPlayerPos(x, y):
@@ -12,16 +14,11 @@ def SetPlayerPos(x, y):
 
 
 def PlayerCollisionEntity():
-    entity.isContainer = False
-    entity.CollidedEntityID = ''
-    for i in range(len(entity.Entity)):
-        if(config.player_y - entity.Entity[entity.EntityID[i]]['Ypos'] == 1 or config.player_y - entity.Entity[entity.EntityID[i]]['Ypos'] == -1):
-
-            if config.player_x - entity.Entity[entity.EntityID[i]]['Xpos'] == 1 or config.player_x - entity.Entity[entity.EntityID[i]]['Xpos'] == 0 or config.player_x - entity.Entity[entity.EntityID[i]]['Xpos'] == -1:
-                if(entity.Entity[entity.EntityID[i]]['Type'] == 'container'):
-                    entity.isContainer = True
-                    entity.CollidedEntityID = entity.EntityID[i]
-
+    for i in range(-1,2):
+        for j in range(-1,2):
+            if(config.map_01[config.player_x + i][config.player_y + j] == "9"):
+                return (config.player_x + i, config.player_x + j)
+    return (-1,-1)
 
 def PlayerMovement(stdscr):
     config.prev_key = config.key
@@ -40,26 +37,19 @@ def PlayerMovement(stdscr):
     if(config.key == ord('s') and config.map_01[config.player_x][config.player_y + 1] != "0"):
         config.player_y += config.speed
     elif(config.key == ord('w') and config.map_01[config.player_x][config.player_y - 1] != "0"):
-
         config.player_y -= config.speed
         # Doesn't move the right way and crashes!
     elif(config.key == ord('d') and config.map_01[config.player_x + 1][config.player_y] != "0"):
         config.player_x += config.speed
     elif(config.key == ord('a') and config.map_01[config.player_x - 1][config.player_y] != "0"):
         config.player_x -= config.speed
-    elif(config.key == ord('i') and entity.isContainer == True):
-        if(entity.CollidedEntityID != ''):
-            stdscr.erase()
-            stdscr.addstr("DESCRIPTION: ", curses.color_pair(6))
-            stdscr.addstr(
-                entity.Entity[entity.CollidedEntityID]['Desc'], curses.color_pair(6))
-            stdscr.addstr('''
-          
-          ''')
-            stdscr.addstr(
-                entity.Entity[entity.CollidedEntityID]['DescImage'], curses.color_pair(6))
-            stdscr.addstr("Press Any Key To Exit!", curses.color_pair(6))
-            stdscr.refresh()
-            stdscr.getkey()
+    elif(config.key == ord('e')):
+        pos_of_entity_collided_with = PlayerCollisionEntity()
+        if pos_of_entity_collided_with != (-1,-1):
+            entity_collided_with = entity.entities[pos_of_entity_collided_with]
+            entity_description = desc.descriptions[entity_collided_with.npc_name]
+
+    elif(config.key == ord('i')):
+            config.current_screen = "ui_deck"
     else:
         pass

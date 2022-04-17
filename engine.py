@@ -72,6 +72,17 @@ def RenderingGameMap(stdscr):
                 stdscr.move(screen_space_y, screen_space_x +
                             screen_space_offset)
                 stdscr.addstr(imageloader.images("map_wall"))
+            elif char_from_map == "9":
+                curses.init_pair(44,201, curses.COLOR_WHITE)
+                curses.init_pair(45,201, 0)
+                Purple_WHITE = curses.color_pair(44)
+                Purple_BLACK = curses.color_pair(45)
+                stdscr.move(screen_space_y, screen_space_x +
+                            screen_space_offset)
+                if(config.npc_collide == False):
+                     stdscr.addstr(imageloader.images("map_card_npc"),Purple_BLACK)
+                else:
+                    stdscr.addstr(imageloader.images("map_card_npc"),Purple_WHITE)
             elif char_from_map == "*":
                 stdscr.move(screen_space_y, screen_space_x +
                             screen_space_offset)
@@ -99,21 +110,6 @@ def RenderingGameMap(stdscr):
                     stdscr.addstr(imageloader.images("map_empty01"), GREY)
                 if(il == 2):
                     stdscr.addstr(imageloader.images("map_empty02"), GREY)
-            elif char_from_map == "3":
-                # Bad code buggy boi
-
-                entity.Entity['chest']['Xpos'] = screen_space_x
-                entity.Entity['chest']['Ypos'] = screen_space_y
-                if(entity.isContainer == False):
-                    stdscr.move(screen_space_y, screen_space_x +
-                                screen_space_offset)
-                    stdscr.addstr(
-                        entity.Entity['chest']['Graphic'], curses.color_pair(4))
-                else:
-                    stdscr.move(screen_space_y, screen_space_x +
-                                screen_space_offset)
-                    stdscr.addstr(
-                        entity.Entity['chest']['Graphic'], curses.color_pair(5))
 
     stdscr.addstr("")
 
@@ -125,14 +121,13 @@ def Draw_UI(stdscr):
     stdscr.addstr(",")
     stdscr.addstr(str(config.player_y))
     stdscr.addstr("\nFPS: " + str(config.true_fps))
-    stdscr.addstr(17, 0, str(entity.CollidedEntityID).capitalize())
+    
 
 
 def Game(stdscr):
     stdscr.nodelay(True)
     curses.noecho()
     curses.cbreak()
-    containers.PlayerCollisionEntity()
     config.cols = stdscr.getmaxyx()[1]
     containers.PlayerMovement(stdscr)
     if config.needFrameUpdate:

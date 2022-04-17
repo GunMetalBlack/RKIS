@@ -1,16 +1,8 @@
-import desc
-import imageloader
+entities = {}
 
-isContainer = False
-EntityID = ['chest']
-CollidedEntityID = ''
-#------------------------------------
-# Formating For Items
-#ID,Name,Graphic,Desc,DescImage,Type,xpos,ypos
-Entity = {
-  EntityID[0]:{'Name':"Chest",'Graphic':'ê','Desc':desc.descLoad("ent_chest"),"DescImage":imageloader.images("desc_chest") ,'Type':"container",'Xpos':7000,'Ypos':7000}
-  }
-#------------------------------------
-#Colliding Tiles AKA walls
-#---------------------------------
-TileLength = 0
+class Entity:
+    def __init__(self, pos_x, pos_y, desc_name,npc_name):
+        entities[(pos_x, pos_y)] = self
+        self.desc_name = desc_name
+        self.npc_name = npc_name
+    

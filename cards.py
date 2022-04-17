@@ -50,7 +50,7 @@ class Deck:
         self.card_selection = 0
 
     def start_build(self):
-        for i in range(0, 5):
+        for i in range(0, 6):
             self.cards.append(Card(
                 random.randint(1, 3),
                 random.randint(1, 3),

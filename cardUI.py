@@ -4,32 +4,50 @@ import cards
 import config
 import imageloader
 
+
 def LoadCardUI(stdscr):
-    card_id_selection = 0
-    # Should be the screen where the deck is displayer with the name of the card
-    event = stdscr.getch()
-    if(event == ord('a')):
-        card_id_selection =+ 1 
-    elif(event == ord('d')):
-        card_id_selection =- 1
+    stdscr.scrollok(1)
+    stdscr.move(0,0)
     
-    FORM_Card_UI = imageloader.images("card_ui_DECKLOGO") + "\n"+ config.main_deck.get_card(card_id_selection).NAME + "\n" + config.main_deck.get_card(card_id_selection).IMG + "\n" + config.main_deck.get_card(card_id_selection).DESC + "\n" + config.main_deck.get_card(card_id_selection).HP + "\n" + config.main_deck.get_card(card_id_selection).DEF + "\n" + config.main_deck.get_card(card_id_selection).ATT + "\n" + config.main_deck.get_card(card_id_selection).ENG   
+    # Should be the screen where the deck is displayer with the name of the card
+    config.prev_key = config.key
+    event = stdscr.getch()
+    config.key = event if event != -1 else config.prev_key
+    if event != -1:
+        config.key = event
+    else:
+        config.key = ord(']')
+    if(config.card_id_selection > 5):
+        config.card_id_selection = 0
+    if(config.card_id_selection < 0):
+        config.card_id_selection = 5
+    if(config.key == ord('a')):
+        config.card_id_selection =- 1
+        config.key = ord('l')
+    elif(config.key == ord('d')):
+        config.card_id_selection =+ 1
+        config.key = ord('l')
+    config.main_deck.select_card(config.card_id_selection)
+    card_ui_as_string = "{}\n{}\n{}\n{}\nHealth:{} Defense:{} Attack:{} Energy:{}\n".format(
+        imageloader.images("card_ui_DECKLOGO"),
+        config.main_deck.get_card().NAME,
+        config.main_deck.get_card().IMG,
+        config.main_deck.get_card().DESC,
+        str(config.main_deck.get_card().HP),
+        str(config.main_deck.get_card().DEF),
+        str(config.main_deck.get_card().ATT),
+        str(config.main_deck.get_card().ENG)
+    )
 
-    if(card_id_selection == 1):
-     stdscr.addstr(str(FORM_Card_UI))
-     stdscr.addstr(imageloader.images("card_ui_lowermenu_selection_0"))   
-    elif(card_id_selection == 2):
-     stdscr.addstr(str(FORM_Card_UI))
-     stdscr.addstr(imageloader.images("card_ui_lowermenu_selection_1"))   
-    elif(card_id_selection == 3):
-     stdscr.addstr(str(FORM_Card_UI))
-     stdscr.addstr(imageloader.images("card_ui_lowermenu_selection_3"))   
-    elif(card_id_selection == 4):
-     stdscr.addstr(str(FORM_Card_UI))
-     stdscr.addstr(imageloader.images("card_ui_lowermenu_selection_4"))   
-    elif(card_id_selection == 5):
-     stdscr.addstr(str(FORM_Card_UI))
-     stdscr.addstr(imageloader.images("card_ui_lowermenu_selection_5"))   
-    elif(card_id_selection > 5):
-        card_id_selection = 1
 
+    
+    # Print Graphics Line-By-Line to Prevent Out-Of-Bounds Errors
+    for line in card_ui_as_string.splitlines():
+        stdscr.addnstr(line, stdscr.getmaxyx()[1])
+        stdscr.addstr("\n")
+    for line in imageloader.images_as_array("card_ui_lowermenu_selection_" + str(config.card_id_selection)):
+        stdscr.addnstr(line, stdscr.getmaxyx()[1])
+        stdscr.addstr("\n")
+
+    stdscr.refresh()
+    #stdscr.erase()
