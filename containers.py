@@ -1,3 +1,4 @@
+from pickle import TRUE
 from re import T
 import combat
 import config
@@ -55,4 +56,7 @@ def PlayerMovement(stdscr):
     elif(config.key == ord('b')):
         config.erase_shop = True
         config.current_screen = "shop_screen"
+    elif(config.key == ord('h')):
+        config.help_text = not config.help_text
+   
         

@@ -1,5 +1,10 @@
 # RKIS
-This, this right here is the most pain you will suffer if you try and work on it.
-Welcome to pasta town.
-Update this number every time curses has screwed the development
-#35
+Find the cards. Defeat the mainframe.
+
+## How to Run:
+- Install Python 3.8
+- Install Required Dependencies using `pip install`
+
+## Dependencies:
+- replit
+- curses (or windows-curses for Windows)

@@ -125,11 +125,13 @@ def Draw_UI(stdscr):
         entity_description = desc.descriptions[entity_collided_with.desc_name]
         imageloader.print_string_to_screen(stdscr, entity_description)
         return
-    
-    imageloader.print_image_to_screen(stdscr, "ui_screenbar")
-    imageloader.print_string_to_screen(stdscr, "\n" + str(config.player_x) + "," + str(config.player_y) + "\n")
-    imageloader.print_image_to_screen(stdscr, "controls")
-    imageloader.print_string_to_screen(stdscr, "\nFPS: " + str(config.true_fps))
+    if(config.help_text == True):
+        stdscr.addstr(desc.descriptions["help_desc"])
+    else:
+        imageloader.print_image_to_screen(stdscr, "ui_screenbar")
+        imageloader.print_string_to_screen(stdscr, "\n" + str(config.player_x) + "," + str(config.player_y) + "\n")
+        imageloader.print_image_to_screen(stdscr, "controls")
+        imageloader.print_string_to_screen(stdscr, "\nFPS: " + str(config.true_fps))
 
 
 def Game(stdscr):

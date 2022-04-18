@@ -22,6 +22,7 @@ needFrameUpdate = True
 next_screen = "open_world"
 player_collision = 0
 player_x = 350
+help_text = False
 player_y = 347
 prev_key = key
 selected_main_menu_option = 1

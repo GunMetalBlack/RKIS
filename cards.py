@@ -2,7 +2,7 @@ import random
 from unicodedata import name
 import imageloader
 import cardNames
-
+import logging
 
 def CardNameGenerator():
     first_name = cardNames.card_names[random.randint(0, 1000)]
@@ -70,7 +70,7 @@ class Deck:
         return copy_of_self
 
     def start_build(self):
-        for i in range(0, 6):
+        for i in range(0, 5):
             self.cards.append(Card(
                 random.randint(1, 3),
                 random.randint(1, 3),
@@ -85,7 +85,7 @@ class Deck:
     def select_card(self, card_selection):
         if card_selection < 0 or card_selection > len(self.cards) - 1:
             return
-        if self.cards[card_selection].TYPE.name is "Dead":
+        if self.cards[card_selection].TYPE.name == "Dead":
             return
         self.card_selection = card_selection
 
@@ -108,11 +108,11 @@ class Deck:
     def get_next_living_card(self) -> int:
         for i in range(0, len(self.cards)):
             card_in_deck = self.cards[i]
-            if card_in_deck.TYPE.name is not Card.DEAD_TYPE.name:
+            if card_in_deck.TYPE.name != Card.DEAD_TYPE.name:
                 return i
         return -1  # No Living Cards
 
-    def build(self, boss_name, boss_desc, hp_min, hp_max, att_min, att_max, def_min, def_max):
+    def build_boss_deck(self, boss_name, boss_desc, hp_min, hp_max, att_min, att_max, def_min, def_max):
         self.cards.append(Card(
             random.randint(hp_min, hp_max),
             random.randint(att_min, att_max),

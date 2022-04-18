@@ -125,7 +125,9 @@ images_dictionary["controls"] = '''CONTROLS:
     “W,A,S,D” to move around the world.
     “I” to view your card deck.
     Once in the card deck screen you can switch cards with "a" and "d"
-    Press "e" to enter the mainframe aka(Start a boss battle with cards)
+    Press "y" to enter the mainframe aka(Start a boss battle with cards)
+    "B" to enter shop
+    Press "H" to toggle help menu
      '''
 # ITEM DESC imageFil
 images_dictionary["desc_chest"] = '''

@@ -17,12 +17,22 @@ class Boss:
         self.min_max_def = min_max_def
         self.min_max_att = min_max_att
         self.deck = cards.Deck()
-        self.deck.build(
+        self.deck.build_boss_deck(
             self.boss_name,
             desc.descriptions[self.boss_desc_key],
             self.min_max_hp[0], self.min_max_hp[1],
             self.min_max_att[0], self.min_max_att[1],
             self.min_max_def[0], self.min_max_def[1],
+        )
+    
+    def get_copy(self):
+        return Boss(
+            self.boss_graphic_key,
+            self.boss_desc_key,
+            self.boss_name,
+            self.min_max_hp,
+            self.min_max_def,
+            self.min_max_att
         )
 
     def __str__(self):
@@ -60,24 +70,20 @@ class BossFight:
         if defending_card.HP <= 0:
             if self.turn == "boss":
                 self.player_deck.kill_current_card()
-                if self.player_deck.get_next_living_card == -1:
-                    main.logging.debug("You Lost!")
+                if self.player_deck.get_next_living_card() == -1:
                     return "open_world", "ui_you_lost"
                 else:
                     config.shop_points += 1
                     self.turn = "player"
-                    main.logging.debug("Your Card Died!")
                     return "card_select", "ui_card_dead"
             else:
                 config.shop_points += 5
                 config.current_boss += 1
-                main.logging.debug("You Won!")
                 return "open_world", "ui_you_won"
         if self.turn == "boss":
             self.turn = "player"
         else:
             self.turn = "boss"
-        main.logging.debug("Fight Isn't Over!")
         return "card_select", "explosion_animation"
 
 
