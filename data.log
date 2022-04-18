@@ -285,3 +285,486 @@ Attack = 1
 Defense = 2
 Energy = 2
 Description = This card is a star. It bears a platinumhue and is aGENERICtype.
+2022-04-17 18:06:22,842:root:DEBUG:Card:
+Name = curiousgrowth
+Health = 1
+Attack = 3
+Defense = 3
+Energy = 1
+Description = This card is a palatable. It bears a cornflower hue and is a GENERIC type.
+2022-04-17 18:06:33,925:root:DEBUG:Card:
+Name = marketwet
+Health = 1
+Attack = 3
+Defense = 1
+Energy = 3
+Description = This card is a fail. It bears a lime hue and is a GENERIC type.
+2022-04-17 18:24:10,344:root:DEBUG:Card:
+Name = gradesink
+Health = 3
+Attack = 2
+Defense = 1
+Energy = 1
+Description = This card is a somewhere. It bears a beige hue and is a GENERIC type.
+2022-04-17 18:25:54,076:root:DEBUG:Card:
+Name = noddedcommunity
+Health = 2
+Attack = 3
+Defense = 2
+Energy = 2
+Description = This card is a promise. It bears a asparagus hue and is a GENERIC type.
+2022-04-17 18:27:07,740:root:DEBUG:Card:
+Name = oceanthree
+Health = 3
+Attack = 3
+Defense = 2
+Energy = 2
+Description = This card is a impartial. It bears a gamboge hue and is a GENERIC type.
+2022-04-17 18:27:58,122:root:DEBUG:Card:
+Name = growthprogress
+Health = 1
+Attack = 3
+Defense = 3
+Energy = 3
+Description = This card is a independence. It bears a raw-umber hue and is a GENERIC type.
+2022-04-17 18:28:26,630:root:DEBUG:Card:
+Name = agenear
+Health = 2
+Attack = 2
+Defense = 3
+Energy = 2
+Description = This card is a concentrate. It bears a puce hue and is a GENERIC type.
+2022-04-17 18:28:46,137:root:DEBUG:Card:
+Name = yourdear
+Health = 2
+Attack = 3
+Defense = 2
+Energy = 2
+Description = This card is a breakfast. It bears a tenné-(tawny) hue and is a GENERIC type.
+2022-04-17 18:30:14,957:root:DEBUG:Card:
+Name = numeralwet
+Health = 1
+Attack = 2
+Defense = 2
+Energy = 2
+Description = This card is a midnight. It bears a ivory hue and is a GENERIC type.
+2022-04-17 18:32:13,446:root:DEBUG:Card:
+Name = carriedbegun
+Health = 3
+Attack = 2
+Defense = 1
+Energy = 1
+Description = This card is a ill-fated. It bears a gold hue and is a GENERIC type.
+2022-04-17 18:33:21,357:root:DEBUG:Card:
+Name = anglefinest
+Health = 2
+Attack = 2
+Defense = 1
+Energy = 2
+Description = This card is a material. It bears a red hue and is a GENERIC type.
+2022-04-17 18:35:14,643:root:DEBUG:Card:
+Name = pitchcapital
+Health = 2
+Attack = 1
+Defense = 3
+Energy = 2
+Description = This card is a minimum. It bears a linen hue and is a GENERIC type.
+2022-04-17 18:40:48,162:root:DEBUG:Card:
+Name = walkthird
+Health = 1
+Attack = 2
+Defense = 1
+Energy = 2
+Description = This card is a mess. It bears a lemon hue and is aGeneric type.
+2022-04-17 18:50:49,482:root:DEBUG:Card:
+Name = poetprimitive
+Health = 2
+Attack = 3
+Defense = 1
+Energy = 3
+Description = This card is a prickly. It bears a aqua hue and is a Generic type.
+2022-04-17 18:52:21,155:root:DEBUG:Card:
+Name = storyboy
+Health = 2
+Attack = 2
+Defense = 2
+Energy = 1
+Description = This card is a editor. It bears a forest-green hue and is a Generic type.
+2022-04-17 18:53:58,426:root:DEBUG:Card:
+Name = onceoriginal
+Health = 3
+Attack = 1
+Defense = 2
+Energy = 1
+Description = This card is a meager. It bears a van-dyke-brown hue and is a Generic type.
+2022-04-17 18:55:18,946:root:DEBUG:Card:
+Name = extrastream
+Health = 3
+Attack = 2
+Defense = 1
+Energy = 2
+Description = This card is a method. It bears a thistle hue and is a Generic type.
+2022-04-17 19:01:52,638:root:DEBUG:Card:
+Name = recordpurple
+Health = 2
+Attack = 3
+Defense = 2
+Energy = 2
+Description = This card is a bother. It bears a aqua hue and is a Generic type.
+2022-04-17 19:47:21,636:root:DEBUG:Card:
+Name = paragraphhim
+Health = 2
+Attack = 3
+Defense = 2
+Energy = 2
+Description = This card is a weekend. It bears a chartreuse hue and is a Generic type.
+2022-04-17 19:50:52,037:root:DEBUG:Card:
+Name = scorenational
+Health = 3
+Attack = 3
+Defense = 1
+Energy = 1
+Description = This card is a visit. It bears a cornflower hue and is a Generic type.
+2022-04-17 19:51:11,711:root:DEBUG:Card:
+Name = threwkidshospital
+Health = 2
+Attack = 2
+Defense = 2
+Energy = 1
+Description = This card is a grandmother. It bears a coral hue and is a Generic type.
+2022-04-17 19:51:41,774:root:DEBUG:Card:
+Name = theeessential
+Health = 1
+Attack = 3
+Defense = 1
+Energy = 1
+Description = This card is a humongous. It bears a seashell hue and is a Generic type.
+2022-04-17 19:54:45,336:root:DEBUG:Card:
+Name = objecttie
+Health = 3
+Attack = 3
+Defense = 3
+Energy = 2
+Description = This card is a implement. It bears a buff hue and is a Generic type.
+2022-04-17 19:55:06,685:root:DEBUG:Card:
+Name = processtie
+Health = 1
+Attack = 1
+Defense = 3
+Energy = 1
+Description = This card is a bend. It bears a office-green hue and is a Generic type.
+2022-04-17 19:56:15,373:root:DEBUG:Card:
+Name = joinedmerely
+Health = 2
+Attack = 1
+Defense = 3
+Energy = 3
+Description = This card is a angle. It bears a red hue and is a Generic type.
+2022-04-17 19:57:49,652:root:DEBUG:Card:
+Name = treateddrive
+Health = 2
+Attack = 3
+Defense = 3
+Energy = 3
+Description = This card is a corner. It bears a pink hue and is a Generic type.
+2022-04-17 19:59:56,894:root:DEBUG:Card:
+Name = shallowstructure
+Health = 1
+Attack = 3
+Defense = 3
+Energy = 2
+Description = This card is a excitement. It bears a salmon hue and is a Generic type.
+2022-04-17 20:00:00,433:root:DEBUG:Card:
+Name = extrastepped
+Health = 3
+Attack = 3
+Defense = 2
+Energy = 1
+Description = This card is a discount. It bears a persimmon hue and is a Generic type.
+2022-04-17 20:00:23,755:root:DEBUG:Card:
+Name = cannotacross
+Health = 2
+Attack = 1
+Defense = 1
+Energy = 3
+Description = This card is a wrong. It bears a flax hue and is a Generic type.
+2022-04-17 20:02:44,777:root:DEBUG:Card:
+Name = thatsecond
+Health = 3
+Attack = 1
+Defense = 3
+Energy = 3
+Description = This card is a pound. It bears a french-rose hue and is a Generic type.
+2022-04-17 20:02:50,104:root:DEBUG:Card:
+Name = possiblyanyway
+Health = 3
+Attack = 2
+Defense = 2
+Energy = 3
+Description = This card is a physical. It bears a blue hue and is a Generic type.
+2022-04-17 20:03:14,991:root:DEBUG:Card:
+Name = haveacross
+Health = 3
+Attack = 1
+Defense = 3
+Energy = 1
+Description = This card is a divide. It bears a cobalt hue and is a Generic type.
+2022-04-17 20:05:15,460:root:DEBUG:Card:
+Name = momentstop
+Health = 2
+Attack = 1
+Defense = 3
+Energy = 2
+Description = This card is a spectacular. It bears a cyan hue and is a Generic type.
+2022-04-17 20:06:08,770:root:DEBUG:Card:
+Name = rearnoon
+Health = 1
+Attack = 3
+Defense = 1
+Energy = 1
+Description = This card is a key. It bears a lime-green hue and is a Generic type.
+2022-04-17 20:41:10,302:root:DEBUG:Card:
+Name = gatecommunity
+Health = 3
+Attack = 3
+Defense = 1
+Energy = 1
+Description = This card is a start. It bears a pumpkin hue and is a Generic type.
+2022-04-17 20:46:25,032:root:DEBUG:Card:
+Name = dirtaid
+Health = 1
+Attack = 3
+Defense = 3
+Energy = 2
+Description = This card is a euphoric. It bears a lemon-chiffon hue and is a Generic type.
+2022-04-17 20:47:28,504:root:DEBUG:Card:
+Name = provideproperty
+Health = 1
+Attack = 3
+Defense = 2
+Energy = 3
+Description = This card is a doting. It bears a pear hue and is a Generic type.
+2022-04-17 20:47:42,144:root:DEBUG:Card:
+Name = representhunter
+Health = 2
+Attack = 2
+Defense = 2
+Energy = 1
+Description = This card is a period. It bears a grey hue and is a Generic type.
+2022-04-17 20:49:01,091:root:DEBUG:Card:
+Name = summerbirthday
+Health = 2
+Attack = 1
+Defense = 3
+Energy = 1
+Description = This card is a interview. It bears a viridian hue and is a Generic type.
+2022-04-17 20:51:27,732:root:DEBUG:Card:
+Name = ofharder
+Health = 2
+Attack = 3
+Defense = 1
+Energy = 2
+Description = This card is a outgoing. It bears a quartz-grey hue and is a Generic type.
+2022-04-17 20:53:34,303:root:DEBUG:Card:
+Name = compasssomehow
+Health = 1
+Attack = 3
+Defense = 3
+Energy = 2
+Description = This card is a still. It bears a firebrick hue and is a Generic type.
+2022-04-17 20:54:20,680:root:DEBUG:Card:
+Name = numeralcream
+Health = 2
+Attack = 2
+Defense = 1
+Energy = 1
+Description = This card is a poetry. It bears a khaki hue and is a Generic type.
+2022-04-17 20:54:42,668:root:DEBUG:Card:
+Name = noddedwet
+Health = 3
+Attack = 2
+Defense = 1
+Energy = 2
+Description = This card is a fresh. It bears a chocolate hue and is a Generic type.
+2022-04-17 20:55:10,137:root:DEBUG:Card:
+Name = poetmarried
+Health = 1
+Attack = 1
+Defense = 1
+Energy = 1
+Description = This card is a championship. It bears a tan hue and is a Generic type.
+2022-04-17 20:55:37,422:root:DEBUG:Card:
+Name = largepleasant
+Health = 3
+Attack = 2
+Defense = 2
+Energy = 3
+Description = This card is a throat. It bears a fern-green hue and is a Generic type.
+2022-04-17 20:59:05,042:root:DEBUG:Card:
+Name = risingdream
+Health = 2
+Attack = 2
+Defense = 1
+Energy = 3
+Description = This card is a form. It bears a khaki hue and is a Generic type.
+2022-04-17 20:59:13,552:root:DEBUG:Card:
+Name = membersouth
+Health = 2
+Attack = 2
+Defense = 2
+Energy = 1
+Description = This card is a manner. It bears a sandy-brown hue and is a Generic type.
+2022-04-17 21:00:43,686:root:DEBUG:Card:
+Name = stopwhole
+Health = 2
+Attack = 1
+Defense = 2
+Energy = 2
+Description = This card is a minor. It bears a prussian-blue hue and is a Generic type.
+2022-04-17 21:01:25,709:root:DEBUG:Card:
+Name = hairyour
+Health = 1
+Attack = 3
+Defense = 2
+Energy = 1
+Description = This card is a puzzled. It bears a wheat hue and is a Generic type.
+2022-04-17 21:01:53,891:root:DEBUG:Card:
+Name = feelbrief
+Health = 2
+Attack = 1
+Defense = 2
+Energy = 3
+Description = This card is a sister. It bears a black hue and is a Generic type.
+2022-04-17 21:02:08,352:root:DEBUG:Card:
+Name = fightsunlight
+Health = 2
+Attack = 2
+Defense = 3
+Energy = 1
+Description = This card is a team. It bears a silver hue and is a Generic type.
+2022-04-17 21:05:28,385:root:DEBUG:Card:
+Name = orbegun
+Health = 3
+Attack = 1
+Defense = 2
+Energy = 1
+Description = This card is a regular. It bears a lavender hue and is a Generic type.
+2022-04-17 21:21:21,839:root:DEBUG:Card:
+Name = frogfinal
+Health = 1
+Attack = 2
+Defense = 2
+Energy = 3
+Description = This card is a still. It bears a lime hue and is a Generic type.
+2022-04-17 21:22:27,273:root:DEBUG:Card:
+Name = mostsmoke
+Health = 3
+Attack = 1
+Defense = 2
+Energy = 1
+Description = This card is a rigid. It bears a aquamarine hue and is a Generic type.
+2022-04-17 21:23:29,114:root:DEBUG:Card:
+Name = anythingthemselves
+Health = 3
+Attack = 3
+Defense = 1
+Energy = 1
+Description = This card is a enchanting. It bears a lime-green hue and is a Generic type.
+2022-04-17 21:26:29,800:root:DEBUG:Card:
+Name = oldestpopular
+Health = 1
+Attack = 1
+Defense = 2
+Energy = 2
+Description = This card is a campaign. It bears a powder-blue hue and is a Generic type.
+2022-04-17 21:27:46,310:root:DEBUG:Card:
+Name = tobaccoseries
+Health = 1
+Attack = 1
+Defense = 3
+Energy = 1
+Description = This card is a meek. It bears a white hue and is a Generic type.
+2022-04-17 21:28:00,351:root:DEBUG:Card:
+Name = mannerbottom
+Health = 2
+Attack = 1
+Defense = 1
+Energy = 1
+Description = This card is a ear. It bears a orchid hue and is a Generic type.
+2022-04-17 21:33:00,535:root:DEBUG:Card:
+Name = findeasily
+Health = 2
+Attack = 1
+Defense = 2
+Energy = 2
+Description = This card is a plate. It bears a steel-blue hue and is a Generic type.
+2022-04-17 21:33:07,627:root:DEBUG:Card:
+Name = biggestvowel
+Health = 2
+Attack = 3
+Defense = 3
+Energy = 1
+Description = This card is a joyous. It bears a silver hue and is a Generic type.
+2022-04-17 21:55:33,354:root:DEBUG:Card:
+Name = markshoe
+Health = 2
+Attack = 2
+Defense = 3
+Energy = 2
+Description = This card is a constant. It bears a malachite hue and is a Generic type.
+2022-04-17 21:56:42,700:root:DEBUG:Card:
+Name = redfrighten
+Health = 3
+Attack = 3
+Defense = 2
+Energy = 2
+Description = This card is a tough. It bears a magnolia hue and is a Generic type.
+2022-04-17 21:57:13,507:root:DEBUG:Card:
+Name = shellsyour
+Health = 3
+Attack = 3
+Defense = 1
+Energy = 1
+Description = This card is a fatherly. It bears a robin-egg-blue hue and is a Generic type.
+2022-04-17 21:57:53,865:root:DEBUG:Card:
+Name = dawnnest
+Health = 2
+Attack = 2
+Defense = 1
+Energy = 3
+Description = This card is a same. It bears a terra-cotta hue and is a Generic type.
+2022-04-17 21:58:34,130:root:DEBUG:Card:
+Name = itsexcept
+Health = 2
+Attack = 2
+Defense = 1
+Energy = 1
+Description = This card is a drag. It bears a chocolate hue and is a Generic type.
+2022-04-17 22:00:03,122:root:DEBUG:Card:
+Name = swinggot
+Health = 1
+Attack = 1
+Defense = 2
+Energy = 2
+Description = This card is a cash. It bears a blue-green hue and is a Generic type.
+2022-04-17 22:00:40,032:root:DEBUG:Card:
+Name = hugeempty
+Health = 1
+Attack = 1
+Defense = 1
+Energy = 3
+Description = This card is a tepid. It bears a sepia hue and is a Generic type.
+2022-04-17 22:00:55,974:root:DEBUG:Card:
+Name = percouple
+Health = 2
+Attack = 1
+Defense = 2
+Energy = 3
+Description = This card is a flowery. It bears a han-purple hue and is a Generic type.
+2022-04-17 22:01:55,878:root:DEBUG:Card:
+Name = briefreceive
+Health = 3
+Attack = 3
+Defense = 1
+Energy = 1
+Description = This card is a teeming. It bears a slate-grey hue and is a Generic type.

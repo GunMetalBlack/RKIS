@@ -16,8 +16,9 @@ def SetPlayerPos(x, y):
 def PlayerCollisionEntity():
     for i in range(-1,2):
         for j in range(-1,2):
-            if(config.map_01[config.player_x + i][config.player_y + j] == "9"):
-                return (config.player_x + i, config.player_x + j)
+            postuple = (i + config.player_x, j + config.player_y)
+            if postuple in entity.entities:
+                return postuple
     return (-1,-1)
 
 def PlayerMovement(stdscr):
@@ -43,13 +44,10 @@ def PlayerMovement(stdscr):
         config.player_x += config.speed
     elif(config.key == ord('a') and config.map_01[config.player_x - 1][config.player_y] != "0"):
         config.player_x -= config.speed
-    elif(config.key == ord('e')):
-        pos_of_entity_collided_with = PlayerCollisionEntity()
-        if pos_of_entity_collided_with != (-1,-1):
-            entity_collided_with = entity.entities[pos_of_entity_collided_with]
-            entity_description = desc.descriptions[entity_collided_with.npc_name]
 
     elif(config.key == ord('i')):
-            config.current_screen = "ui_deck"
-    else:
-        pass
+        config.current_screen = "ui_deck"
+    elif(config.key == ord('e')):
+        config.current_screen = "boss_attack"
+    elif(config.key == ord('b')):
+        config.current_screen = "shop_screen"

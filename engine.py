@@ -6,6 +6,7 @@ import main
 import random
 import entity
 import time
+import desc
 
 
 def UserInput(stdscr, keys):
@@ -79,10 +80,11 @@ def RenderingGameMap(stdscr):
                 Purple_BLACK = curses.color_pair(45)
                 stdscr.move(screen_space_y, screen_space_x +
                             screen_space_offset)
-                if(config.npc_collide == False):
-                     stdscr.addstr(imageloader.images("map_card_npc"),Purple_BLACK)
+                pos_of_entity_collided_with = containers.PlayerCollisionEntity()
+                if pos_of_entity_collided_with != (-1,-1):
+                     stdscr.addstr(imageloader.images("map_card_npc"),Purple_WHITE)
                 else:
-                    stdscr.addstr(imageloader.images("map_card_npc"),Purple_WHITE)
+                    stdscr.addstr(imageloader.images("map_card_npc"),Purple_BLACK)
             elif char_from_map == "*":
                 stdscr.move(screen_space_y, screen_space_x +
                             screen_space_offset)
@@ -116,12 +118,18 @@ def RenderingGameMap(stdscr):
 
 def Draw_UI(stdscr):
     stdscr.move(20, 5 + screen_space_offset)
-    stdscr.addstr(imageloader.images("ui_screenbar"))
-    stdscr.addstr(str(config.player_x))
-    stdscr.addstr(",")
-    stdscr.addstr(str(config.player_y))
-    stdscr.addstr("\nFPS: " + str(config.true_fps))
+
+    pos_of_entity_collided_with = containers.PlayerCollisionEntity()
+    if pos_of_entity_collided_with != (-1,-1):
+        entity_collided_with = entity.entities[pos_of_entity_collided_with]
+        entity_description = desc.descriptions[entity_collided_with.desc_name]
+        imageloader.print_string_to_screen(stdscr, entity_description)
+        return
     
+    imageloader.print_image_to_screen(stdscr, "ui_screenbar")
+    imageloader.print_string_to_screen(stdscr, "\n" + str(config.player_x) + "," + str(config.player_y) + "\n")
+    imageloader.print_image_to_screen(stdscr, "controls")
+    imageloader.print_string_to_screen(stdscr, "\nFPS: " + str(config.true_fps))
 
 
 def Game(stdscr):
@@ -131,6 +139,7 @@ def Game(stdscr):
     config.cols = stdscr.getmaxyx()[1]
     containers.PlayerMovement(stdscr)
     if config.needFrameUpdate:
+        stdscr.erase()
         RenderingGameMap(stdscr)
         Draw_UI(stdscr)
     if (time.time() - config.start_time) > config.fps_update_rate :

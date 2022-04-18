@@ -1,10 +1,15 @@
 import curses
+
+import cards
+import combat
 import map
 import time
-import cards
 
 cols = 0
+current_boss = 0
+current_boss_fight:combat.BossFight
 current_screen = "splash"
+current_animation_frame = 1
 fps_update_rate = 1 # displays the frame rate every 1 second
 frame_count = 0
 key = 0
@@ -12,6 +17,7 @@ loading = 0
 main_deck = cards.Deck()
 map_01 = map.map_01
 needFrameUpdate = True
+next_screen = "open_world"
 player_collision = 0
 player_x = 350
 player_y = 350

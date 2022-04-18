@@ -1,4 +1,6 @@
 import logging
+import shop
+from numpy import std
 import engine
 import curses
 from curses import wrapper
@@ -6,6 +8,8 @@ import imageloader
 from replit import audio
 import config
 import cardUI
+import entity
+import combat
 
 logging.basicConfig(filename="data.log", level=logging.DEBUG,
                     format='%(asctime)s:%(name)s:%(levelname)s:%(message)s')
@@ -32,6 +36,11 @@ def main(stdscr):
     curses.curs_set(0)
     config.main_deck.start_build()
     logging.debug(str(config.main_deck.get_card()))
+    stdscr.scrollok(1)
+    
+    entity.init_entities()
+    combat.init_bosses()
+
     while (True):
         if(config.current_screen == "splash"):
             stdscr.erase()
@@ -49,7 +58,15 @@ def main(stdscr):
         elif(config.current_screen == "main_menu"):
             engine.mainMenu(stdscr)
         elif(config.current_screen == "ui_deck"):
-            cardUI.LoadCardUI(stdscr)
+            cardUI.LoadCardUI(stdscr, True)
+        elif(config.current_screen == "explosion_animation"):
+            combat.render_explosion_animation(stdscr, config.next_screen)
+        elif(config.current_screen == "boss_attack"):
+            combat.render_boss_attack(stdscr, config.current_boss_fight)
+        elif(config.current_screen == "card_select"):
+            combat.render_card_select(stdscr)
+        elif(config.current_screen == "shop_screen"):
+            shop.display_shop(stdscr)
         else: # current_screen == "open_world"
             engine.Game(stdscr)
 

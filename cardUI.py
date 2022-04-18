@@ -2,32 +2,41 @@
 from distutils.command.config import config
 import cards
 import config
+import curses
 import imageloader
 
 
-def LoadCardUI(stdscr):
+def LoadCardUI(stdscr, is_not_battle:bool):
     stdscr.scrollok(1)
     stdscr.move(0,0)
     
     # Should be the screen where the deck is displayer with the name of the card
     config.prev_key = config.key
     event = stdscr.getch()
-    config.key = event if event != -1 else config.prev_key
-    if event != -1:
+    if(event != -1):
         config.key = event
     else:
         config.key = ord(']')
-    if(config.card_id_selection > 5):
-        config.card_id_selection = 0
-    if(config.card_id_selection < 0):
-        config.card_id_selection = 5
-    if(config.key == ord('a')):
-        config.card_id_selection =- 1
-        config.key = ord('l')
-    elif(config.key == ord('d')):
-        config.card_id_selection =+ 1
-        config.key = ord('l')
-    config.main_deck.select_card(config.card_id_selection)
+    
+    if(config.key != config.prev_key):
+        if(config.key == ord('a')):
+            config.card_id_selection -= 1
+        elif(config.key == ord('d')):
+            config.card_id_selection += 1
+        elif(config.key == ord('i') and is_not_battle):
+            config.current_screen = "open_world"
+            return
+        elif(config.key == ord('\n') and not is_not_battle):
+            config.next_screen = "boss_attack"
+            config.current_screen = "explosion_animation"
+            return
+
+        if(config.card_id_selection > 4):
+            config.card_id_selection = 0
+        if(config.card_id_selection < 0):
+            config.card_id_selection = 4
+        config.main_deck.select_card(config.card_id_selection)
+    
     card_ui_as_string = "{}\n{}\n{}\n{}\nHealth:{} Defense:{} Attack:{} Energy:{}\n".format(
         imageloader.images("card_ui_DECKLOGO"),
         config.main_deck.get_card().NAME,
@@ -39,15 +48,9 @@ def LoadCardUI(stdscr):
         str(config.main_deck.get_card().ENG)
     )
 
-
-    
     # Print Graphics Line-By-Line to Prevent Out-Of-Bounds Errors
-    for line in card_ui_as_string.splitlines():
-        stdscr.addnstr(line, stdscr.getmaxyx()[1])
-        stdscr.addstr("\n")
-    for line in imageloader.images_as_array("card_ui_lowermenu_selection_" + str(config.card_id_selection)):
-        stdscr.addnstr(line, stdscr.getmaxyx()[1])
-        stdscr.addstr("\n")
+    imageloader.print_string_to_screen(stdscr, card_ui_as_string)
+    imageloader.print_image_to_screen(stdscr, "card_ui_lowermenu_selection_" + str(config.card_id_selection))
 
     stdscr.refresh()
     #stdscr.erase()
