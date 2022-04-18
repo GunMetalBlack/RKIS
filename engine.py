@@ -146,5 +146,7 @@ def Game(stdscr):
         config.true_fps = config.frame_count / (time.time() - config.start_time)
         config.frame_count = 0
         config.start_time = time.time()
+    if(config.erase_shop == True):
+        stdscr.erase()
 
         # stdscr.refresh()

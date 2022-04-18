@@ -1,4 +1,5 @@
 from re import T
+import combat
 import config
 import engine
 import entity
@@ -47,7 +48,11 @@ def PlayerMovement(stdscr):
 
     elif(config.key == ord('i')):
         config.current_screen = "ui_deck"
-    elif(config.key == ord('e')):
-        config.current_screen = "boss_attack"
+    elif(config.key == ord('y')):
+        if config.current_boss <= len(combat.bosses) - 1:
+            config.current_boss_fight = combat.BossFight(combat.bosses[config.current_boss], config.main_deck.get_copy())
+            config.current_screen = "boss_attack"
     elif(config.key == ord('b')):
+        config.erase_shop = True
         config.current_screen = "shop_screen"
+        

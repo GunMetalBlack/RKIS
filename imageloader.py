@@ -33,6 +33,8 @@ CONTROLS:
 “W” to cycle through the main menu and “ENTER“ to select an option 
 “W,A,S,D” to move around the world.
 “I” to view your card deck.
+"Y" to start boss battles
+"B" to enter shop
 
 Developed Along with the "Nostalgia Engine".
 Have Fun :D
@@ -161,7 +163,7 @@ images_dictionary["blank_card_art"] = '''
 '''
 
 images_dictionary["card_ui_lowermenu_selection_0"] = ''']
-  "A key" to cycle left and "D key" to cycle right
+  "A key" to cycle left and "D key" to cycle right Press Enter To Select
 ██████████████████████████████████████████████████████████████████
 ┼███████┼┼┼┼┼┼┼███████┼┼┼┼┼┼┼███████┼┼┼┼┼┼┼┼███████┼┼┼┼┼┼┼███████┼
 ┼██░░░██┼┼┼┼┼┼┼█░░░░░█┼┼┼┼┼┼┼█░░░░░█┼┼┼┼┼┼┼┼█░░░░░█┼┼┼┼┼┼┼█░░░░░█┼
@@ -174,7 +176,7 @@ images_dictionary["card_ui_lowermenu_selection_0"] = ''']
 '''
 
 images_dictionary["card_ui_lowermenu_selection_1"] = '''
-  "A key" to cycle left and "D key" to cycle right
+  "A key" to cycle left and "D key" to cycle right Press Enter To Select
 ██████████████████████████████████████████████████████████████████
 ┼███████┼┼┼┼┼┼┼███████┼┼┼┼┼┼┼███████┼┼┼┼┼┼┼┼███████┼┼┼┼┼┼┼███████┼
 ┼█░░░░░█┼┼┼┼┼┼┼██░░░██┼┼┼┼┼┼┼█░░░░░█┼┼┼┼┼┼┼┼█░░░░░█┼┼┼┼┼┼┼█░░░░░█┼
@@ -187,7 +189,7 @@ images_dictionary["card_ui_lowermenu_selection_1"] = '''
 '''
 
 images_dictionary["card_ui_lowermenu_selection_2"] = '''
-  "A key" to cycle left and "D key" to cycle right
+  "A key" to cycle left and "D key" to cycle right Press Enter To Select
 ██████████████████████████████████████████████████████████████████
 ┼███████┼┼┼┼┼┼┼███████┼┼┼┼┼┼┼███████┼┼┼┼┼┼┼┼███████┼┼┼┼┼┼┼███████┼
 ┼█░░░░░█┼┼┼┼┼┼┼█░░░░░█┼┼┼┼┼┼┼██░░░██┼┼┼┼┼┼┼┼█░░░░░█┼┼┼┼┼┼┼█░░░░░█┼
@@ -200,7 +202,7 @@ images_dictionary["card_ui_lowermenu_selection_2"] = '''
 '''
 
 images_dictionary["card_ui_lowermenu_selection_3"] = '''
-  "A key" to cycle left and "D key" to cycle right
+  "A key" to cycle left and "D key" to cycle right Press Enter To Select
 ██████████████████████████████████████████████████████████████████
 ┼███████┼┼┼┼┼┼┼███████┼┼┼┼┼┼┼███████┼┼┼┼┼┼┼┼███████┼┼┼┼┼┼┼███████┼
 ┼█░░░░░█┼┼┼┼┼┼┼█░░░░░█┼┼┼┼┼┼┼█░░░░░█┼┼┼┼┼┼┼┼██░░░██┼┼┼┼┼┼┼█░░░░░█┼
@@ -213,7 +215,7 @@ images_dictionary["card_ui_lowermenu_selection_3"] = '''
 '''
 
 images_dictionary["card_ui_lowermenu_selection_4"] = '''
-  "A key" to cycle left and "D key" to cycle right
+  "A key" to cycle left and "D key" to cycle right Press Enter To Select
 ██████████████████████████████████████████████████████████████████
 ┼███████┼┼┼┼┼┼┼███████┼┼┼┼┼┼┼███████┼┼┼┼┼┼┼┼███████┼┼┼┼┼┼┼███████┼
 ┼█░░░░░█┼┼┼┼┼┼┼█░░░░░█┼┼┼┼┼┼┼█░░░░░█┼┼┼┼┼┼┼┼█░░░░░█┼┼┼┼┼┼┼██░░░██┼
@@ -239,13 +241,67 @@ images_dictionary["card_ui_DECKLOGO"] = '''
      ~~            \/__/         \/__/         \|__|    
 '''
 
+images_dictionary["ui_you_won_0"]='''
+ ▄· ▄▌      ▄• ▄▌    ▄▄▌ ▐ ▄▌       ▐ ▄ 
+▐█▪██▌▪     █▪██▌    ██· █▌▐█▪     •█▌▐█
+▐█▌▐█▪ ▄█▀▄ █▌▐█▌    ██▪▐█▐▐▌ ▄█▀▄ ▐█▐▐▌
+ ▐█▀·.▐█▌.▐▌▐█▄█▌    ▐█▌██▐█▌▐█▌.▐▌██▐█▌
+  ▀ •  ▀█▄▀▪ ▀▀▀      ▀▀▀▀ ▀▪ ▀█▄▀▪▀▀ █▪
+'''
+
+
+images_dictionary["ui_you_lost_0"] = '''
+▓██   ██▓ ▒█████   █    ██     ██▓     ▒█████    ██████ ▄▄▄█████▓
+ ▒██  ██▒▒██▒  ██▒ ██  ▓██▒   ▓██▒    ▒██▒  ██▒▒██    ▒ ▓  ██▒ ▓▒
+  ▒██ ██░▒██░  ██▒▓██  ▒██░   ▒██░    ▒██░  ██▒░ ▓██▄   ▒ ▓██░ ▒░
+  ░ ▐██▓░▒██   ██░▓▓█  ░██░   ▒██░    ▒██   ██░  ▒   ██▒░ ▓██▓ ░ 
+  ░ ██▒▓░░ ████▓▒░▒▒█████▓    ░██████▒░ ████▓▒░▒██████▒▒  ▒██▒ ░ 
+   ██▒▒▒ ░ ▒░▒░▒░ ░▒▓▒ ▒ ▒    ░ ▒░▓  ░░ ▒░▒░▒░ ▒ ▒▓▒ ▒ ░  ▒ ░░   
+ ▓██ ░▒░   ░ ▒ ▒░ ░░▒░ ░ ░    ░ ░ ▒  ░  ░ ▒ ▒░ ░ ░▒  ░ ░    ░    
+ ▒ ▒ ░░  ░ ░ ░ ▒   ░░░ ░ ░      ░ ░   ░ ░ ░ ▒  ░  ░  ░    ░      
+ ░ ░         ░ ░     ░            ░  ░    ░ ░        ░           
+ ░ ░                                                                 
+'''
+images_dictionary["ui_card_dead_0"]='''
+ ▄· ▄▌      ▄• ▄▌▄▄▄       
+▐█▪██▌▪     █▪██▌▀▄ █·     
+▐█▌▐█▪ ▄█▀▄ █▌▐█▌▐▀▀▄      
+ ▐█▀·.▐█▌.▐▌▐█▄█▌▐█•█▌     
+  ▀ •  ▀█▄▀▪ ▀▀▀ .▀  ▀     
+ ▄▄·  ▄▄▄· ▄▄▄  ·▄▄▄▄      
+▐█ ▌▪▐█ ▀█ ▀▄ █·██▪ ██     
+██ ▄▄▄█▀▀█ ▐▀▀▄ ▐█· ▐█▌    
+▐███▌▐█ ▪▐▌▐█•█▌██. ██     
+·▀▀▀  ▀  ▀ .▀  ▀▀▀▀▀▀•     
+·▄▄▄▄  ▪  ▄▄▄ .·▄▄▄▄       
+██▪ ██ ██ ▀▄.▀·██▪ ██      
+▐█· ▐█▌▐█·▐▀▀▪▄▐█· ▐█▌     
+██. ██ ▐█▌▐█▄▄▌██. ██      
+▀▀▀▀▀• ▀▀▀ ▀▀▀ ▀▀▀▀▀•    
+
+'''
+
+images_dictionary["shop_ui_logo"] = '''
+  _________.__                      
+ /   _____/|  |__   ____ ______     
+ \_____  \ |  |  \ /  _ \\____ \    
+ /        \|   Y  (  <_> )  |_> >   
+/_______  /|___|  /\____/|   __/    
+        \/      \/       |__|         
+  ______   ______   ______   ______ 
+ /_____/  /_____/  /_____/  /_____/                                    
+'''
+
 images_dictionary["dead_card"] = '''
   _____
- /     \
+ /     \\
 | () () |
  \  ^  /
   |||||
   |||||
+
+
+--------
 '''
 
 

@@ -42,6 +42,30 @@ I can see it clearly ; Hardships faced unnecessarily ,lay in the calm for as lon
 descriptions["card_npc_04"] = ""
 descriptions["card_npc_05"] = ""
 
-descriptions["boss_desc_0"] = ""
-descriptions["boss_desc_1"] = ""
-descriptions["boss_desc_2"] = ""
+descriptions["boss_desc_0"] = '''
+You lack the knowledge and power to defeat me. 
+You are but a reflection of the media.  
+The people don't see me as a hero but as the villain who abuses the system ,
+ You may be able to pierce  the corporate veil and see the light within ARKIS , 
+But today we see who is strongest!
+'''
+descriptions["boss_desc_1"] = '''
+Paywall : The obstacle you have met is an immovable object.
+You will lose all that your miserable soul has earned.
+The future is held by ARKIS . 
+If you wander till death you may find the truth in ARKIS .
+Leave all that you have gained and you might be left alive.'''
+
+descriptions["boss_desc_2"] = '''Senator Armstrong:{eyes turn red }
+All you could do in your poor miserable life was to defeat the bugs under me .
+With the new world I have created everything will be more efficient .
+I will use the fear throughout the nation to create an empire that will rule for a thousand years.
+We will prevail  no matter the circumstance , your tiny existence can't make a change in this immense world.'''
+
+
+descriptions["help_desc"]='''
+If you couldn’t tell, this is a card game. You can explore the world for story dialog with npcs represented by the character “8“.
+By pressing “e “ in the open world, you start a boss battle.
+Once you enter a boss battle, the boss will attack you first after you will be prompted to select a card from your deck to attack the boss with.
+You can upgrade these cards with points gotten after dying or beating a boss to the boss by entering the shop, giving you the ability to improve. 
+'''

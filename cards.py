@@ -7,7 +7,7 @@ import cardNames
 def CardNameGenerator():
     first_name = cardNames.card_names[random.randint(0, 1000)]
     last_name = cardNames.card_names[random.randint(0, 1000)]
-    name = first_name + last_name
+    name = first_name.capitalize() + " " + last_name.capitalize()
     return name
 
 
@@ -29,8 +29,9 @@ class Card:
     STEEL_TYPE = CardType("Steel", 4.20, 0.69)
     MAGIE_TYPE = CardType("Magie", 0.42, 6.90)
     GENERIC_TYPE = CardType("Generic", 1, 1)
+    DEAD_TYPE = CardType("Dead", 0, 0)
 
-    def __init__(self, health_points, attack, defense, energy, image, description, name, type):
+    def __init__(self, health_points: int, attack: int, defense: int, energy: int, image: str, description: str, name: str, type: CardType):
         self.HP = health_points
         self.DEF = defense
         self.ENG = energy
@@ -40,14 +41,33 @@ class Card:
         self.NAME = name
         self.TYPE = type
 
+    def get_copy(self):
+        return Card(
+            self.HP,
+            self.DEF,
+            self.ENG,
+            self.ATT,
+            self.IMG,
+            self.DESC,
+            self.NAME,
+            self.TYPE
+        )
+
     def __str__(self):
-        return "Card:\nName = {}\nHealth = {}\nAttack = {}\nDefense = {}\nEnergy = {}\nDescription = {}".format(self.NAME, self.HP, self.ATT, self.DEF, self.ENG, self.DESC)
+        return "Name = {}\nHealth = {}\nAttack = {}\nDefense = {}\nEnergy = {}".format(self.NAME, self.HP, self.ATT, self.DEF, self.ENG)
 
 
 class Deck:
     def __init__(self):
         self.cards = []
         self.card_selection = 0
+
+    def get_copy(self):
+        copy_of_self = Deck()
+        copy_of_self.card_selection = self.card_selection
+        for original_card in self.cards:
+            copy_of_self.cards.append(original_card.get_copy())
+        return copy_of_self
 
     def start_build(self):
         for i in range(0, 6):
@@ -63,13 +83,17 @@ class Deck:
             ))
 
     def select_card(self, card_selection):
+        if card_selection < 0 or card_selection > len(self.cards) - 1:
+            return
+        if self.cards[card_selection].TYPE.name is "Dead":
+            return
         self.card_selection = card_selection
 
     def get_card(self):
         return self.cards[self.card_selection]
 
-    def dead_card_fill(self):
-         self.cards.append(Card(
+    def kill_current_card(self):
+        self.cards[self.card_selection] = Card(
             0,
             0,
             0,
@@ -77,8 +101,16 @@ class Deck:
             imageloader.images("dead_card"),
             "A CARD TORN TO SHREADS",
             "PLAUGE",
-            "Nottype"
-        ))
+            Card.DEAD_TYPE
+        )
+        self.select_card(self.get_next_living_card())
+
+    def get_next_living_card(self) -> int:
+        for i in range(0, len(self.cards)):
+            card_in_deck = self.cards[i]
+            if card_in_deck.TYPE.name is not Card.DEAD_TYPE.name:
+                return i
+        return -1  # No Living Cards
 
     def build(self, boss_name, boss_desc, hp_min, hp_max, att_min, att_max, def_min, def_max):
         self.cards.append(Card(

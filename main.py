@@ -20,7 +20,7 @@ def main(stdscr):
     curses.noecho()
     curses.cbreak()
     # init COLORS----------------------------
-    curses.init_pair(1, curses.COLOR_BLUE, curses.COLOR_BLACK)
+    curses.init_pair(1, curses.COLOR_CYAN, curses.COLOR_BLACK)
     # green wt green bg
     curses.init_pair(13, 48, curses.COLOR_BLACK)
     # red wt green bg
@@ -35,7 +35,6 @@ def main(stdscr):
     # init COLORS----------------------------
     curses.curs_set(0)
     config.main_deck.start_build()
-    logging.debug(str(config.main_deck.get_card()))
     stdscr.scrollok(1)
     
     entity.init_entities()
@@ -60,7 +59,13 @@ def main(stdscr):
         elif(config.current_screen == "ui_deck"):
             cardUI.LoadCardUI(stdscr, True)
         elif(config.current_screen == "explosion_animation"):
-            combat.render_explosion_animation(stdscr, config.next_screen)
+            combat.render_text_animation(stdscr, config.next_screen, 4, "explosion_")
+        elif(config.current_screen == "ui_card_dead"):
+            combat.render_text_animation(stdscr, config.next_screen, 1, "ui_card_dead_")
+        elif(config.current_screen == "ui_you_lost"):
+            combat.render_text_animation(stdscr, config.next_screen, 1, "ui_you_lost_")
+        elif(config.current_screen == "ui_you_won"):
+            combat.render_text_animation(stdscr, config.next_screen, 1, "ui_you_won_")
         elif(config.current_screen == "boss_attack"):
             combat.render_boss_attack(stdscr, config.current_boss_fight)
         elif(config.current_screen == "card_select"):

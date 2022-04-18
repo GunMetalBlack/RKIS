@@ -9,7 +9,13 @@ import imageloader
 def LoadCardUI(stdscr, is_not_battle:bool):
     stdscr.scrollok(1)
     stdscr.move(0,0)
-    
+
+    loaded_deck: cards.Deck
+    if is_not_battle:
+        loaded_deck = config.main_deck
+    else:
+        loaded_deck = config.current_boss_fight.player_deck
+
     # Should be the screen where the deck is displayer with the name of the card
     config.prev_key = config.key
     event = stdscr.getch()
@@ -27,25 +33,26 @@ def LoadCardUI(stdscr, is_not_battle:bool):
             config.current_screen = "open_world"
             return
         elif(config.key == ord('\n') and not is_not_battle):
-            config.next_screen = "boss_attack"
-            config.current_screen = "explosion_animation"
-            return
+            if loaded_deck.cards[config.card_id_selection].TYPE.name != "Dead":
+                config.next_screen = "boss_attack"
+                config.current_screen = "explosion_animation"
+                return
 
         if(config.card_id_selection > 4):
             config.card_id_selection = 0
         if(config.card_id_selection < 0):
             config.card_id_selection = 4
-        config.main_deck.select_card(config.card_id_selection)
+        loaded_deck.select_card(config.card_id_selection)
     
     card_ui_as_string = "{}\n{}\n{}\n{}\nHealth:{} Defense:{} Attack:{} Energy:{}\n".format(
         imageloader.images("card_ui_DECKLOGO"),
-        config.main_deck.get_card().NAME,
-        config.main_deck.get_card().IMG,
-        config.main_deck.get_card().DESC,
-        str(config.main_deck.get_card().HP),
-        str(config.main_deck.get_card().DEF),
-        str(config.main_deck.get_card().ATT),
-        str(config.main_deck.get_card().ENG)
+        loaded_deck.cards[config.card_id_selection].NAME,
+        loaded_deck.cards[config.card_id_selection].IMG,
+        loaded_deck.cards[config.card_id_selection].DESC,
+        str(loaded_deck.cards[config.card_id_selection].HP),
+        str(loaded_deck.cards[config.card_id_selection].DEF),
+        str(loaded_deck.cards[config.card_id_selection].ATT),
+        str(loaded_deck.cards[config.card_id_selection].ENG)
     )
 
     # Print Graphics Line-By-Line to Prevent Out-Of-Bounds Errors
