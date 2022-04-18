@@ -52,7 +52,7 @@ class BossFight:
         else:
             return "DEFENDING"
     
-    def do_turn(self) -> tuple[str, str]:
+    def do_turn(self):
         attacking_card: cards.Card
         defending_card: cards.Card
         if self.turn == "boss":

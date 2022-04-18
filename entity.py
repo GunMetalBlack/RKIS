@@ -10,5 +10,5 @@ def init_entities():
     Entity(349, 343, "card_npc_01", "Unknown")
     Entity(249, 271, "card_npc_02", "Coal Miner")
     Entity(601, 79, "card_npc_03", "The Thief that Stole the Smoke")
-    Entity(249, 271, "card_npc_04", "Bob")
-    Entity(249, 271, "card_npc_05", "Jim")
+    Entity(50, 644, "card_npc_04", "Bob")
+    Entity(627, 632, "card_npc_05", "Jim")

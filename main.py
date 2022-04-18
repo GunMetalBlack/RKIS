@@ -5,7 +5,6 @@ import engine
 import curses
 from curses import wrapper
 import imageloader
-from replit import audio
 import config
 import cardUI
 import entity
