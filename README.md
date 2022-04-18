@@ -6,5 +6,4 @@ Find the cards. Defeat the mainframe.
 - Install Required Dependencies using `pip install`
 
 ## Dependencies:
-- replit
 - curses (or windows-curses for Windows)
