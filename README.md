@@ -9,5 +9,6 @@ Find the cards. Defeat the mainframe.
 
 ## Dependencies:
 - curses (or windows-curses for Windows)
+- numpy
 
 
